@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title: string;
+  skills: string[];
+  image: string;
+}
+
+const {title, skills, image} = Astro.props;
+---
+<div class="skill_card">
+
+  <h3 class="skill_card_title">{title}</h3>
+  <div class="skill_card_content">
+    <img class="skill_card_image" src={image}/>
+    <div>
+      {
+        skills.map( skill =>  ( <p>{skill}</p> ) )
+      }
+    </div>
+  </div>
+
+</div>

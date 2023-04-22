@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-family: 'Sora-SemiBold';
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: 'Palanquin-Regular';
+  font-weight: 400;
+  font-size: 3rem;
+}
+
+p{
+
+}
+
+body {
+	font-family: 'Biryani-ExtraLight', sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+
+	margin: auto;
+	padding: 20px;
+	max-width: 65ch;
+
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+}
+

@@ -1,0 +1,61 @@
+---
+import BaseHead  from '../components/BaseHead.astro';
+import SkillCard from '../components/SkillCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { SKILLS, PROJECTS } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+</head>
+<body>
+  
+  <header>
+    <!-- TODO: navbar component -->
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
+    </section>
+    
+    <section class="about">
+      <h2 class="about_title">Un poco sobre mi</h2>
+      <div class="about_text">
+        <p>Me llamo Walker Alfaro, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
+        <p>Actualmente me dedico al desarrollo de aplicaciones web principalmente bajo el stack MERN.</p>
+        <p>Me implico en el flujo completo del desarrollo del software, desde la toma de requerimientos, pasando por la concepción de la solución, el diseño, el desarrollo y el testing.</p>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2 class="skills_title">Tecnologías que utilizo</h2>
+      <div class="skills_cards_wrap">
+        {
+          SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
+            <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2 class="projects_title">Proyectos</h2>
+      <div class="projects_cards_wrap">
+        {
+          PROJECTS.map( ({ projectTitle, projectDescription, projectImage }) => (
+            <ProjectCard title={projectTitle} description={projectDescription} image={projectImage} />
+          ))
+        }
+      </div>
+    </section>
+
+  </main>
+
+
+</body>
+</html>
