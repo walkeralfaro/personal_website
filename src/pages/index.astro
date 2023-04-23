@@ -47,8 +47,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       <h2 class="projects_title">Proyectos</h2>
       <div class="projects_cards_wrap">
         {
-          PROJECTS.map( ({ projectTitle, projectDescription, projectImage }) => (
-            <ProjectCard title={projectTitle} description={projectDescription} image={projectImage} />
+          PROJECTS.map( ({ projectTitle, projectDescription, projectImage, projectTechnologies }) => (
+            <ProjectCard title={projectTitle} description={projectDescription} image={projectImage} technologies={projectTechnologies}/>
           ))
         }
       </div>
