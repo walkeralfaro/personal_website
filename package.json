@@ -10,7 +10,24 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.3.0"
+    "@astrojs/react": "^2.1.1",
+    "@react-email/body": "^0.0.2",
+    "@react-email/container": "^0.0.8",
+    "@react-email/head": "^0.0.5",
+    "@react-email/html": "^0.0.4",
+    "@react-email/preview": "^0.0.6",
+    "@react-email/render": "^0.0.7",
+    "@react-email/section": "^0.0.9",
+    "@react-email/text": "^0.0.5",
+    "@types/nodemailer": "^6.4.7",
+    "@types/react": "^18.0.38",
+    "@types/react-dom": "^18.0.11",
+    "astro": "^2.3.0",
+    "nodemailer": "^6.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-email": "1.9.1",
+    "react-hook-form": "^7.43.9"
   },
   "devDependencies": {
     "sass": "^1.62.0"

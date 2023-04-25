@@ -2,6 +2,7 @@
 import BaseHead  from '../components/BaseHead.astro';
 import SkillCard from '../components/SkillCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import { Contact } from '../components/Contact';
 import { SKILLS, PROJECTS } from '../consts';
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
@@ -53,6 +54,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
         }
       </div>
     </section>
+
+    <section class="contact">
+      <h2 class="contact_title">contacto</h2>
+      <Contact client:load />
+    </section>
+
 
   </main>
 
