@@ -1,7 +1,11 @@
+import styles from './Contact.module.scss';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import styles from './Contact.module.scss';
 import { createPost } from '../services/api';
+import { toastifyError, toastifySuccess } from '../services/toastify';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface FormData {
   name: string;
@@ -19,12 +23,16 @@ export default function Contact({contact_api}: Props) {
   const{ register, reset, formState, formState: { errors, isSubmitSuccessful }, handleSubmit } = useForm<FormData>();
   
   const onSubmit = async ( data: FormData ) => {
+
+    const id = toast.loading('Enviando Mensaje      📧');
+
     try {
       const response = await createPost(data, contact_api);
-      // TODO: cuando el correo se envio satisfactoriamente
+      if(response.state === 'OK') {
+        toastifySuccess(id);
+      }
     } catch (error) {
-      alert(`Error: ${error.message}`);
-      // TODO: cuando hubo un error en el correo
+      toastifyError(id);
     }
   };
 
@@ -92,6 +100,7 @@ export default function Contact({contact_api}: Props) {
         <input type="submit" value="Enviar" />
 
       </form>
+      <ToastContainer className={styles.toast}/>
     </div>
   )
 }
