@@ -1,13 +1,31 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './Contact.module.scss';
+import { createPost } from '../services/api';
 
-export const Contact = () => {
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface Props {
+  contact_api: string;
+}
+
+export default function Contact({contact_api}: Props) {
+
+  const{ register, reset, formState, formState: { errors, isSubmitSuccessful }, handleSubmit } = useForm<FormData>();
   
-  const{ register, reset, formState, formState: { errors, isSubmitSuccessful }, handleSubmit } = useForm();
-
-  const onSubmit = ( data ) => {
-    console.log(data);
+  const onSubmit = async ( data: FormData ) => {
+    try {
+      const response = await createPost(data, contact_api);
+      // TODO: cuando el correo se envio satisfactoriamente
+    } catch (error) {
+      alert(`Error: ${error.message}`);
+      // TODO: cuando hubo un error en el correo
+    }
   };
 
   useEffect(() => {
@@ -19,7 +37,7 @@ export const Contact = () => {
         message: '',
       });
     }
-  }, [formState])
+  }, [formState]);
   
   return (
     <div>
@@ -29,7 +47,7 @@ export const Contact = () => {
           <input type="text" id="name" className={errors.name && styles.inputError}
           {...register('name', {
             required: true,
-            pattern: /^[A-Za-z]+$/i,
+            pattern: /^[\p{L}\s]+$/u,
             minLength: 2,
             maxLength: 30,
           })} />
@@ -40,9 +58,9 @@ export const Contact = () => {
         </div>
         <div>
           <label htmlFor="email">correo</label>
-          <input type="text" id="email" {...register('email', {
+          <input type="email" id="email" {...register('email', {
             required: true, 
-            pattern: /^\S+@\S+$/i,
+            pattern:  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
             maxLength: 40,
           })} />
           {errors.email?.type === 'required' && <p>El campo es requerido</p>}
@@ -53,10 +71,12 @@ export const Contact = () => {
           <label htmlFor="subject">asunto</label>
           <input type="text" id="subject" {...register('subject', {
             required: true,
+            pattern: /^[\p{L}\s]+$/u,
             maxLength: 40,
           })} />
           {errors.subject?.type === 'required' && <p>El campo es requerido</p>}
           {errors.subject?.type === 'maxLength' && <p>Máximo 40 letras</p>}
+          {errors.subject?.type === 'pattern' && <p>Sólo debe contener letras</p>}
         </div>
         <div>
           <label htmlFor="message">mensaje</label>
@@ -66,8 +86,8 @@ export const Contact = () => {
             maxLength: 300,
           })} />
           {errors.message?.type === 'required' && <p>El campo es requerido</p>}
-          {errors.message?.type === 'pattern' && <p>No carácteres especiales</p>}
-          {errors.message?.type === 'maxLength' && <p>Maximo 50 palabras</p>}
+          {errors.message?.type === 'pattern' && <p>No caracteres especiales</p>}
+          {errors.message?.type === 'maxLength' && <p>Máxima 50 palabras</p>}
         </div>
         <input type="submit" value="Enviar" />
 

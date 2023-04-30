@@ -2,7 +2,7 @@
 import BaseHead  from '../components/BaseHead.astro';
 import SkillCard from '../components/SkillCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { Contact } from '../components/Contact';
+import Contact from '../components/Contact';
 import { SKILLS, PROJECTS } from '../consts';
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
@@ -57,12 +57,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
     <section class="contact">
       <h2 class="contact_title">contacto</h2>
-      <Contact client:load />
+      <Contact client:load contact_api={import.meta.env.CONTACT_API}/>
     </section>
 
-
   </main>
-
 
 </body>
 </html>

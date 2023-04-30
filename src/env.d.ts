@@ -3,7 +3,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-
+  CONTACT_API:string;
 }
 
 interface ImportMeta {
