@@ -1,11 +1,12 @@
 import styles from './Contact.module.scss';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { createPost } from '../services/api';
-import { toastifyError, toastifySuccess } from '../services/toastify';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { createPost } from '../../services/api';
+import { toastifyError, toastifySuccess } from '../../services/toastify';
+
 
 interface FormData {
   name: string;
@@ -24,7 +25,7 @@ export default function Contact({contact_api}: Props) {
   
   const onSubmit = async ( data: FormData ) => {
 
-    const id = toast.loading('Enviando Mensaje      📧');
+    const id = toast.loading('Enviando Mensaje 📨');
 
     try {
       const response = await createPost(data, contact_api);
@@ -97,7 +98,8 @@ export default function Contact({contact_api}: Props) {
           {errors.message?.type === 'pattern' && <p>No caracteres especiales</p>}
           {errors.message?.type === 'maxLength' && <p>Máxima 50 palabras</p>}
         </div>
-        <input type="submit" value="Enviar" />
+
+        <button className='button' type="submit">Enviar</button>
 
       </form>
       <ToastContainer className={styles.toast}/>

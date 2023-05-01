@@ -9,6 +9,10 @@ html {
   box-sizing: inherit;
 }
 
+.dark-mode {
+  color: red;
+}
+
 h1 {
   font-family: 'Sora';
   font-weight: 600;
@@ -19,6 +23,10 @@ h2 {
   font-family: 'Palanquin';
   font-weight: 00;
   font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {

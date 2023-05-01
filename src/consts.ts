@@ -34,6 +34,7 @@ export const SKILLS = [
 ];
 export const PROJECTS = [
   {
+    "projectLink": "https://www.frontendmentor.io/profile/WalkerAlfaro",
     "projectImage": "/images/projects/rocket.svg",
     "projectTitle": "frontend mentor challenges",
     "projectDescription": "Retos de programación frontend que ponen a prueba estas habilidades de desarrollo.\nEstos retos fueron resueltos con React, Vue3 o JS vanilla.",
@@ -42,6 +43,7 @@ export const PROJECTS = [
     ]
   },
   {
+    "projectLink": "https://www.frontendmentor.io/profile/WalkerAlfaro",
     "projectImage": "/images/projects/weather.svg",
     "projectTitle": "estación metereológica",
     "projectDescription": "Se implementó en una placa ESP8266, mide variables como temperatura y presión.\nUtiliza el protocolo MQTT (IoT) en su comunicación con el backend.",

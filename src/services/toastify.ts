@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const toastifySuccess = (id: any) => {
   toast.update(id,{ 
-    render: 'Mensaje enviado    📬', 
+    render: 'Mensaje enviado 📬', 
     type: 'success', 
     theme: 'colored',
     isLoading: false,
@@ -17,7 +17,7 @@ export const toastifySuccess = (id: any) => {
 
 export const toastifyError = (id: any) => {
   toast.update(id,{ 
-    render: "error", 
+    render: "Hubo un problema 💔", 
     type: "error", 
     isLoading: false,
     autoClose: 8000,

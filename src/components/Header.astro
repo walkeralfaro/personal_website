@@ -1,0 +1,49 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import gitHub_logo from '../../images/technologies/javascript.svg';
+import linkedIn_logo from '../../images/technologies/sass.svg';
+import dribbble_logo from '../../images/technologies/postman.svg';
+import logo from '../../public/favicon.svg';
+---
+
+<header>
+	<div class="header_logo">
+		<img src={logo} alt="logo_pagina_web" width="50">
+	</div>
+	<nav>
+		<div class="nav_local_links">
+			<HeaderLink href="#about">acerca de mi</HeaderLink>
+			<HeaderLink href="#projects">proyectos</HeaderLink>
+			<HeaderLink href="#contact">contacto</HeaderLink>
+		</div>
+		<div class="nav_external_links">
+			<!-- TODO: agregar boton de dark theme -->
+			<button class="button_theme" id="button_toggle">T</button>
+			<HeaderLink href="https://github.com/walkeralfaro" target="_blank">
+				<img src={gitHub_logo} alt="github_link" width="30" >
+			</HeaderLink>
+			<HeaderLink href="https://linkedin.com/in/walkeralfaro/" target="_blank">
+				<img src={linkedIn_logo} alt="linkedin_link" width="30" >
+			</HeaderLink>
+			<HeaderLink href="https://dribbble.com/walkeralfaro" target="_blank">
+				<img src={dribbble_logo} alt="dribbble_link" width="30" >
+			</HeaderLink>
+		</div>
+	</nav>
+</header>
+<script>
+	const toggleButton = document.querySelector('#button_toggle');
+	const html = document.querySelector('html');
+	
+	toggleButton.addEventListener('click', () => {
+		html.classList.toggle('dark-mode');
+});
+</script>
+<style>
+	header {
+		margin: 0em 0 2em;
+	}
+	h2 {
+		margin: 0.5em 0;
+	}
+</style>

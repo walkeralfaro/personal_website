@@ -1,15 +1,17 @@
 ---
 export interface Props {
+  link: string;
   title: string;
   description: string;
   image?: string;
   technologies?: string[];
 }
 
-const { title, description, image, technologies } = Astro.props;
+const { link, title, description, image, technologies } = Astro.props;
 const pDescription =  description.split('\n');
 ---
 <div class="project_card">
+  <a class="project_card_link" href={link} target="_blank"></a>
 
   <div class="project_card_image">
     <img src={image} alt="referral image of the project">
@@ -35,5 +37,33 @@ const pDescription =  description.split('\n');
 
 <style lang="scss">
   @use '../styles/base/_variables.scss' as *;
+
+  .project_card {
+  position: relative;
+  overflow: hidden;
+
+    &:hover {
+        transform: scale(1.01);
+    }
+    
+    img {
+      max-width: 100%;
+    }
+
+    h2,
+    p {
+      margin: 0;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 
 </style>

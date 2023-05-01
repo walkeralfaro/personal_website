@@ -1,6 +1,23 @@
 // Colors:
-// Primary:
-$Bright_Blue: hsl(220, 98%, 61%);
-$Check_Background: linear-gradient( to right, hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+// Background:
+$Background: hsl(231, 100%, 8%);
+$Background-line: hsl(225, 64%, 8%);
+
+// Background Light:
+$Background-Light: hsl(0, 0%, 87%);
+$Background-line-Light: hsl(0, 0%, 80%);
+
+// Gradient:
+$Gradient-blue: hsl(223, 81%, 31%);
+$Gradient-purple:hsl(285, 98%, 36%);
+
+// Neutral:
+$Body-blue: hsl(229, 40%, 16%);
+$Body-grey01: hsl(0, 0%, 40%);
+$Body-grey02: hsl(0, 0%, 60%);
+$Body-grey03: hsl(0, 0%, 87%);
+
+// Link:
+$Link: hsl(320, 77%, 51%);
 
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300&family=Geo&family=Palanquin:wght@400;600&family=Sora:wght@600&display=swap');

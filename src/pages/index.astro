@@ -1,9 +1,10 @@
 ---
 import BaseHead  from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
 import SkillCard from '../components/SkillCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import Contact from '../components/Contact';
-import { ToastContainer } from 'react-toastify';
+import Contact from '../components/contact/Contact';
+
 import { SKILLS, PROJECTS } from '../consts';
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
@@ -16,16 +17,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 <body>
   
   <header>
-    <!-- TODO: navbar component -->
+    <Header />
   </header>
 
   <main>
 
     <section class="hero">
       <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
+      <a class="hero_linkcv button" href="https://drive.google.com/file/d/1_dGxfkCMLtio8Pvpo5pINHC0glTUxXWg/view?usp=sharing" target="_blank" >Mi CV</a>
     </section>
     
-    <section class="about">
+    <section class="about" id="about">
       <h2 class="about_title">Un poco sobre mi</h2>
       <div class="about_text">
         <p>Me llamo Walker Alfaro, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
@@ -34,7 +36,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
       <h2 class="skills_title">Tecnologías que utilizo</h2>
       <div class="skills_cards_wrap">
         {
@@ -45,23 +47,43 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       </div>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="projects">
       <h2 class="projects_title">Proyectos</h2>
       <div class="projects_cards_wrap">
         {
-          PROJECTS.map( ({ projectTitle, projectDescription, projectImage, projectTechnologies }) => (
-            <ProjectCard title={projectTitle} description={projectDescription} image={projectImage} technologies={projectTechnologies}/>
+          PROJECTS.map( ({ projectLink, projectTitle, projectDescription, projectImage, projectTechnologies }) => (
+            <ProjectCard 
+              title={projectTitle} 
+              description={projectDescription} 
+              image={projectImage} 
+              technologies={projectTechnologies} 
+              link={projectLink}
+            />
           ))
         }
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <h2 class="contact_title">contacto</h2>
       <Contact client:load contact_api={import.meta.env.CONTACT_API}/>
     </section>
 
   </main>
-
+  <script src="../services/smooth.js"></script>
 </body>
 </html>
+
+<style lang="scss">
+
+  .dark-mode {
+    
+    h1 {
+      color: blue
+    }
+
+  }
+
+  
+
+</style>
