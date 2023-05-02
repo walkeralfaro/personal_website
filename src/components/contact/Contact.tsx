@@ -97,7 +97,7 @@ export default function Contact({contact_api}: Props) {
           </div>
           <div className={styles.form_input}>
             <label htmlFor="message">mensaje</label>
-            <input type="text" id="message" className={errors.message && styles.inputError}
+            <textarea id="message" className={errors.message && styles.inputError}
             {...register('message', {
               required: true,
               pattern: /^[^<>{}[\]\\\/]*$/i,
@@ -109,18 +109,20 @@ export default function Contact({contact_api}: Props) {
           </div>
         </div>
 
-        <div className="form_actions">
-          <button className='form_button' type="submit">Enviar</button>
+        <div className={styles.form_actions}>
+          <div className={styles.form_button}>
+            <button type="submit">Enviar</button>
+          </div>
 
-          <div className="social_links">
+          <div className={styles.social_links}>
             <a href="https://github.com/walkeralfaro" target="_blank">
-              <img src={gitHub_logo} alt="github_link" width="30" />
+              <img src={gitHub_logo} alt="github_link" />
             </a>
             <a href="https://linkedin.com/in/walkeralfaro/" target="_blank">
-              <img src={linkedIn_logo} alt="linkedin_link" width="30" />
+              <img src={linkedIn_logo} alt="linkedin_link" />
             </a>
             <a href="https://dribbble.com/walkeralfaro" target="_blank">
-              <img src={dribbble_logo} alt="dribbble_link" width="30" />
+              <img src={dribbble_logo} alt="dribbble_link" />
             </a>
           </div>
         </div>
