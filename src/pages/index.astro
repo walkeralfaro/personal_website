@@ -7,6 +7,7 @@ import Contact from '../components/contact/Contact';
 
 import { SKILLS, PROJECTS } from '../consts';
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
@@ -15,75 +16,75 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
 </head>
 <body>
-  
-  <header>
-    <Header />
-  </header>
-
-  <main>
-
-    <section class="hero">
-      <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
-      <a class="hero_linkcv button" href="https://drive.google.com/file/d/1_dGxfkCMLtio8Pvpo5pINHC0glTUxXWg/view?usp=sharing" target="_blank" >Mi CV</a>
-    </section>
+  <div class="container">
     
-    <section class="about" id="about">
-      <h2 class="about_title">Un poco sobre mi</h2>
-      <div class="about_text">
-        <p>Me llamo Walker Alfaro, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
-        <p>Actualmente me dedico al desarrollo de aplicaciones web principalmente bajo el stack MERN.</p>
-        <p>Me implico en el flujo completo del desarrollo del software, desde la toma de requerimientos, pasando por la concepción de la solución, el diseño, el desarrollo y el testing.</p>
-      </div>
-    </section>
+    <Header />
 
-    <section class="skills" id="skills">
-      <h2 class="skills_title">Tecnologías que utilizo</h2>
-      <div class="skills_cards_wrap">
-        {
-          SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
-            <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
-          ))
-        }
-      </div>
-    </section>
+    <main class="main_container">
+  
+      <section class="hero">
+        <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
+        <a class="hero_linkcv button" href="https://drive.google.com/file/d/1_dGxfkCMLtio8Pvpo5pINHC0glTUxXWg/view?usp=sharing" target="_blank" >Mi CV</a>
+      </section>
+      
+      <section class="about" id="about">
+        <h2 class="about_title">Un poco sobre mi</h2>
+        <div class="about_text">
+          <p>Me llamo Walker Alfaro, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
+          <p>Actualmente me dedico al desarrollo de aplicaciones web principalmente bajo el stack MERN.</p>
+          <p>Me implico en el flujo completo del desarrollo del software, desde la toma de requerimientos, pasando por la concepción de la solución, el diseño, el desarrollo y el testing.</p>
+        </div>
+      </section>
+  
+      <section class="skills" id="skills">
+        <h2 class="skills_title">Tecnologías que utilizo</h2>
+        <div class="skills_cards_wrap">
+          {
+            SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
+              <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
+            ))
+          }
+        </div>
+      </section>
+  
+      <section class="projects" id="projects">
+        <h2 class="projects_title">Proyectos</h2>
+        <div class="projects_cards_wrap">
+          {
+            PROJECTS.map( ({ projectLink, projectTitle, projectDescription, projectImage, projectTechnologies }) => (
+              <ProjectCard 
+                title={projectTitle} 
+                description={projectDescription} 
+                image={projectImage} 
+                technologies={projectTechnologies} 
+                link={projectLink}
+              />
+            ))
+          }
+        </div>
+      </section>
+  
+      <section class="contact" id="contact">
+        <h2 class="contact_title">contacto</h2>
+        <Contact client:load contact_api={import.meta.env.CONTACT_API}/>
+      </section>
+  
+    </main>
 
-    <section class="projects" id="projects">
-      <h2 class="projects_title">Proyectos</h2>
-      <div class="projects_cards_wrap">
-        {
-          PROJECTS.map( ({ projectLink, projectTitle, projectDescription, projectImage, projectTechnologies }) => (
-            <ProjectCard 
-              title={projectTitle} 
-              description={projectDescription} 
-              image={projectImage} 
-              technologies={projectTechnologies} 
-              link={projectLink}
-            />
-          ))
-        }
-      </div>
-    </section>
+  </div><!-- .container -->
 
-    <section class="contact" id="contact">
-      <h2 class="contact_title">contacto</h2>
-      <Contact client:load contact_api={import.meta.env.CONTACT_API}/>
-    </section>
-
-  </main>
+  <Footer/>
+  
   <script src="../services/smooth.js"></script>
 </body>
 </html>
 
 <style lang="scss">
+  @use '../styles/base/_variables.scss' as *;
 
-  .dark-mode {
-    
-    h1 {
-      color: blue
-    }
-
+  .container {
+    width: min(100% - (2.4rem) * 2, 144rem);
+    margin-inline: auto;
   }
-
-  
 
 </style>

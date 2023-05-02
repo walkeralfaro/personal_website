@@ -1,12 +1,14 @@
-.inputError {
-  border-color:red ;
-  color: red;
+@use '../../styles/base/variables' as *;
+
+.form_container {
+
+
+  p {
+    color: $Link;
+  }
+  
 }
 
-.toast {
-  --toastify-color-success: linear-gradient(140deg, rgba(23,33,107,1) 0%, rgba(179,35,132,0.8155637254901961) 100%);
-}
-
-.loco {
-  width: 500px;
-}
+// .toast {
+//   --toastify-color-success: linear-gradient(140deg, rgba(23,33,107,1) 0%, rgba(179,35,132,0.8155637254901961) 100%);
+// }

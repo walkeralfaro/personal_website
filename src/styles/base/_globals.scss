@@ -9,8 +9,18 @@ html {
   box-sizing: inherit;
 }
 
-.dark-mode {
-  color: red;
+body {
+  background-color: $Background;
+  color: $Body-white;
+
+  font-family: 'Biryani', sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
 }
 
 h1 {
@@ -21,7 +31,7 @@ h1 {
 
 h2 {
   font-family: 'Palanquin';
-  font-weight: 00;
+  font-weight: 300;
   font-size: 3rem;
 }
 
@@ -29,18 +39,12 @@ a {
   text-decoration: none;
 }
 
-body {
-	font-family: 'Biryani', sans-serif;
-  font-weight: 300;
-  font-size: 1.6rem;
+.light-mode {
 
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
+  body {
+    background-color: $Background-Light;
+    color: $Body-black;
 
-	text-align: left;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
+  }
 }
 

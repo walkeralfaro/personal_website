@@ -1,0 +1,21 @@
+---
+const today = new Date();
+---
+<footer>
+  diseñado y desarrollado por <span>walker</span> - {today.getFullYear()}
+</footer>
+<style lang="scss">
+  @use '../styles/base/_variables.scss' as *;
+  
+	footer {
+
+    font-family: Geo;
+		padding: 25px;
+		text-align: center;
+    margin-top: 5rem;
+
+    span {
+      color: $Link;
+    }
+	}
+</style>
