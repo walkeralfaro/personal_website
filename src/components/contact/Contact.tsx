@@ -54,52 +54,59 @@ export default function Contact({contact_api}: Props) {
   return (
     <div className={styles.form_container}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='form_name'>
-          <label htmlFor="name" className={errors.name && styles.inputError}>name</label>
-          <input type="text" id="name" className={errors.name && styles.inputError}
-          {...register('name', {
-            required: true,
-            pattern: /^[\p{L}\s]+$/u,
-            minLength: 2,
-            maxLength: 30,
-          })} />
-          {errors.name?.type === 'required' && <p>El campo es requerido</p>}
-          {errors.name?.type === 'maxLength' && <p>Máximo 30 letras</p>}
-          {errors.name?.type === 'minLength' && <p>Mínimo 2 letras</p>}
-          {errors.name?.type === 'pattern' && <p>Sólo debe contener letras</p>}
-        </div>
-        <div className='form_email'>
-          <label htmlFor="email">correo</label>
-          <input type="email" id="email" {...register('email', {
-            required: true, 
-            pattern:  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-            maxLength: 40,
-          })} />
-          {errors.email?.type === 'required' && <p>El campo es requerido</p>}
-          {errors.email?.type === 'pattern' && <p>Ingrese un correo válido</p>}
-          {errors.email?.type === 'maxLength' && <p>Máximo 40 caracteres</p>}
-        </div>
-        <div className='form_subject'>
-          <label htmlFor="subject">asunto</label>
-          <input type="text" id="subject" {...register('subject', {
-            required: true,
-            pattern: /^[\p{L}\s]+$/u,
-            maxLength: 40,
-          })} />
-          {errors.subject?.type === 'required' && <p>El campo es requerido</p>}
-          {errors.subject?.type === 'maxLength' && <p>Máximo 40 letras</p>}
-          {errors.subject?.type === 'pattern' && <p>Sólo debe contener letras</p>}
-        </div>
-        <div className='form_message'>
-          <label htmlFor="message">mensaje</label>
-          <input type="text" id="message" {...register('message', {
-            required: true,
-            pattern: /^[^<>{}[\]\\\/]*$/i,
-            maxLength: 300,
-          })} />
-          {errors.message?.type === 'required' && <p>El campo es requerido</p>}
-          {errors.message?.type === 'pattern' && <p>No caracteres especiales</p>}
-          {errors.message?.type === 'maxLength' && <p>Máxima 50 palabras</p>}
+        <div className={styles.form_inputs}>
+          <div className={styles.form_input}>
+            <label htmlFor="name">name</label>
+            <input type="text" id="name" className={errors.name && styles.inputError}
+            {...register('name', {
+              required: true,
+              pattern: /^[\p{L}\s]+$/u,
+              minLength: 2,
+              maxLength: 30,
+            })} />
+            {errors.name?.type === 'required' && <p>El campo es requerido</p>}
+            {errors.name?.type === 'maxLength' && <p>Máximo 30 letras</p>}
+            {errors.name?.type === 'minLength' && <p>Mínimo 2 letras</p>}
+            {errors.name?.type === 'pattern' && <p>Sólo debe contener letras</p>}
+          </div>
+          <div className={styles.form_email_subject}>
+            <div className={styles.form_input}>
+              <label htmlFor="email">correo</label>
+              <input type="email" id="email" className={errors.email && styles.inputError}
+              {...register('email', {
+                required: true, 
+                pattern:  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                maxLength: 40,
+              })} />
+              {errors.email?.type === 'required' && <p>El campo es requerido</p>}
+              {errors.email?.type === 'pattern' && <p>Ingrese un correo válido</p>}
+              {errors.email?.type === 'maxLength' && <p>Máximo 40 caracteres</p>}
+            </div>
+            <div className={styles.form_input}>
+              <label htmlFor="subject">asunto</label>
+              <input type="text" id="subject" className={errors.subject && styles.inputError}
+              {...register('subject', {
+                required: true,
+                pattern: /^[\p{L}\s]+$/u,
+                maxLength: 40,
+              })} />
+              {errors.subject?.type === 'required' && <p>El campo es requerido</p>}
+              {errors.subject?.type === 'maxLength' && <p>Máximo 40 letras</p>}
+              {errors.subject?.type === 'pattern' && <p>Sólo debe contener letras</p>}
+            </div>
+          </div>
+          <div className={styles.form_input}>
+            <label htmlFor="message">mensaje</label>
+            <input type="text" id="message" className={errors.message && styles.inputError}
+            {...register('message', {
+              required: true,
+              pattern: /^[^<>{}[\]\\\/]*$/i,
+              maxLength: 300,
+            })} />
+            {errors.message?.type === 'required' && <p>El campo es requerido</p>}
+            {errors.message?.type === 'pattern' && <p>No caracteres especiales</p>}
+            {errors.message?.type === 'maxLength' && <p>Máxima 50 palabras</p>}
+          </div>
         </div>
 
         <div className="form_actions">
