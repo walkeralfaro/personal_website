@@ -1,4 +1,5 @@
 @use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
 
 .form_container {
 
@@ -22,6 +23,10 @@
       font-weight: 600;
       font-size: 2rem;
       padding: 1rem;
+
+      &:valid {
+        background-color: $Body-grey03;
+      }
 
       &:focus {
         outline: 4px solid #609fff;
@@ -81,27 +86,10 @@
   .form_button {
 
     button {
-      width: 18rem;
-      height: 6rem;
-      border: none;
-      border-radius: 1rem;
-      font-family: Palanquin;
-      font-size: 3.2rem;
-      font-weight: 600;
-      color: $Body-white;
-      background-color: $Link;
-      padding-bottom: .8rem;
-      text-align:center;
-      cursor: pointer;
-
-      box-shadow: 5px 5px 0px rgba(255, 255, 255, 0.5);
-      transition: box-shadow .1s ease;
-
-      &:hover {
-        background-color: $Link-hover;
-        box-shadow: 7px 7px 0px rgba(255, 255, 255, 0.6);
-      }
+      @include button;
     }
+
+
   }
 
   .social_links {

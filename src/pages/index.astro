@@ -18,15 +18,20 @@ import Footer from '../components/Footer.astro';
 <body>
   <div class="container">
     
-    <Header />
+    <div class="hero_header">
+      <div class="hero_header_padding">
+        <Header />
+    
+        <section class="hero">
+          <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
+          <a class="hero_linkcv" href="https://drive.google.com/file/d/1_dGxfkCMLtio8Pvpo5pINHC0glTUxXWg/view?usp=share_link" target="_blank" >Mi CV</a>
+        </section>
+
+      </div>
+    </div>
 
     <main class="main_container">
-  
-      <section class="hero">
-        <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
-        <a class="hero_linkcv button" href="https://drive.google.com/file/d/1_dGxfkCMLtio8Pvpo5pINHC0glTUxXWg/view?usp=sharing" target="_blank" >Mi CV</a>
-      </section>
-      
+    
       <section class="about" id="about">
         <h2 class="about_title">Un poco sobre mi</h2>
         <div class="about_text">
@@ -81,10 +86,53 @@ import Footer from '../components/Footer.astro';
 
 <style lang="scss">
   @use '../styles/base/_variables.scss' as *;
-
-  .container {
+  @use '../styles/base/_mixins.scss' as *;
+  
+  .hero_header {
+    
+    padding:0 calc((100vw - 144rem)/2) 5rem;
+    background: linear-gradient(90deg, $Gradient-blue -1.35%, $Gradient-purple 102.19%);
+    
+    .hero_header_padding{
+      margin:0 2.4rem;
+    }
+    
+  }
+  
+  .main_container {
     width: min(100% - (2.4rem) * 2, 144rem);
     margin-inline: auto;
   }
+
+  .hero_linkcv {
+    margin: 10rem auto 10rem;
+    display: block;
+    @include button;
+  }
+  
+  .about {
+    margin-top: 10rem;
+  }
+
+  .about_text {
+    background-color: $Body-blue;
+    border-radius: 1.6rem;
+    padding: 4rem;
+    line-height: 180%;
+    letter-spacing: 0.1ch;
+  }
+
+  .skills_cards_wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+  }
+
+  .projects_cards_wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8rem;
+  }
+
 
 </style>

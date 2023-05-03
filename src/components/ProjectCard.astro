@@ -16,22 +16,24 @@ const pDescription =  description.split('\n');
   <div class="project_card_image">
     <img src={image} alt="referral image of the project">
   </div>
-  <h3 class="project_card_title">{title}</h3>
-  <div class="project_card_description">
-    {
-      pDescription.map( paragraphDescription => (
-        <p>{paragraphDescription}</p>
-      ))
-    }
-  </div>
-  <div class="project_card_technologies">
-    {
-      technologies.map(tech => (
-        <div class="project_card_tech_image">
-          <img src={'/images/technologies/'+tech+'.svg'} alt="applied technology" width="30"/>
-        </div>
-      ))
-    }
+  <div class="project_card_content">
+    <h3 class="project_card_title">{title}</h3>
+    <div class="project_card_description">
+      {
+        pDescription.map( paragraphDescription => (
+          <p>{paragraphDescription}</p>
+        ))
+      }
+    </div>
+    <div class="project_card_technologies">
+      {
+        technologies.map(tech => (
+          <div class="project_card_tech_image">
+            <img src={'/images/technologies/'+tech+'.svg'} alt="applied technology" width="30"/>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>
 
@@ -39,20 +41,60 @@ const pDescription =  description.split('\n');
   @use '../styles/base/_variables.scss' as *;
 
   .project_card {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    background-color: $Body-blue;
+    border-radius: 1.6rem;
 
     &:hover {
         transform: scale(1.01);
     }
+
+    &:first-child {
+      .project_card_image {
+        background-color: $Body-blue02;
+      }
+    }
+
+    .project_card_image {
+      background-color: $Body-grey03;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 18rem;
+        margin: 3rem;
+      }
+    }
   
-    a {
+    .project_card_link {
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
     }
+
+    .project_card_content {
+      padding: 2.4rem;
+
+      .project_card_title {
+        font-size: 2rem;
+      }
+
+      .project_card_description {
+        padding: 4rem 0;
+      }
+
+      .project_card_technologies {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem
+      }
+
+    }
+
   }
 
 </style>

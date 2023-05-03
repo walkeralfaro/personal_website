@@ -10,17 +10,19 @@ html {
 }
 
 body {
-  background-color: $Background;
   color: $Body-white;
-
   font-family: 'Biryani', sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.6rem;
 
   text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
+
+  background-image:  linear-gradient($Background-line 1.1px, transparent 1.1px), 
+  linear-gradient(to right, $Background-line 1.1px, $Background 1.1px);
+  background-size: 24px 24px;
 }
 
 h1 {
@@ -33,9 +35,15 @@ h2 {
   font-family: 'Palanquin';
   font-weight: 400;
   font-size: 3rem;
-  margin: 5rem auto;
+  margin: 8rem auto 6rem;
   width: fit-content;
 
+}
+
+h3 {
+  font-family: Palanquin;
+  margin: 0;
+  padding: 0;
 }
 
 a {

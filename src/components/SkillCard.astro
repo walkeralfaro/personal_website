@@ -25,4 +25,37 @@ const {title, skills, image} = Astro.props;
 <style lang="scss">
   @use '../styles/base/_variables.scss' as *;
 
+  .skill_card {
+    background-color: $Body-blue;
+    padding: 1.6rem 0;
+    border-radius: 1.6rem;
+
+    .skill_card_title {
+      margin-left: 1.5rem;
+    }
+
+  }
+
+  .skill_card_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+
+    .skill_card_image {
+      width: 9rem;
+    }
+
+    .skill_card_technologies {
+      width: 18rem;
+      text-align: center;
+
+      .skill_card_technology {
+        margin: .5rem 0;
+      }
+    }
+  }
+
 </style>
