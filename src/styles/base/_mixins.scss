@@ -24,3 +24,10 @@
   }
 
 }
+
+@mixin wrap_section_mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-top: 10rem;
+}

@@ -58,7 +58,7 @@
 
     .form_email_subject {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       column-gap: 1.6rem;
     }
   }
@@ -77,10 +77,15 @@
 }
 
 .form_actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  row-gap: 5rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  column-gap: 5rem;
+  justify-content: space-between;
+  height: 20rem;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  // row-gap: 5rem;
+  // justify-items: center;
   align-items: center;
 
   .form_button {
@@ -101,6 +106,22 @@
     img {
       width: 5rem;
     }
+  }
+}
+
+@media (min-width: $Tablet) {
+
+  .form_container {
+    .form_inputs {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .form_actions {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+
   }
 }
 

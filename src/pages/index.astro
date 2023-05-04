@@ -19,7 +19,7 @@ import Footer from '../components/Footer.astro';
   <div class="container">
     
     <div class="hero_header">
-      <div class="hero_header_padding">
+      <div class="hero_header_container">
         <Header />
     
         <section class="hero">
@@ -32,7 +32,7 @@ import Footer from '../components/Footer.astro';
 
     <main class="main_container">
     
-      <section class="about" id="about">
+      <section class="about">
         <h2 class="about_title">Un poco sobre mi</h2>
         <div class="about_text">
           <p>Me llamo Walker Alfaro, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
@@ -43,12 +43,16 @@ import Footer from '../components/Footer.astro';
   
       <section class="skills" id="skills">
         <h2 class="skills_title">Tecnologías que utilizo</h2>
-        <div class="skills_cards_wrap">
-          {
-            SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
-              <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
-            ))
-          }
+        <div class="prueba">
+
+          <div class="skills_cards_flex">
+            {
+              SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
+                <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
+              ))
+            }
+          </div>
+
         </div>
       </section>
   
@@ -90,49 +94,135 @@ import Footer from '../components/Footer.astro';
   
   .hero_header {
     
-    padding:0 calc((100vw - 144rem)/2) 5rem;
+    padding:0 calc((100vw - 144rem)/2);
     background: linear-gradient(90deg, $Gradient-blue -1.35%, $Gradient-purple 102.19%);
     
-    .hero_header_padding{
-      margin:0 2.4rem;
+    .hero_header_container{
+      width: min(100% - (2.4rem) * 2, 144rem);
+      margin-inline: auto;
     }
     
   }
+
+// Hero *************************************************************************************
+
+  .hero {
+    max-width: 100rem;
+    padding: 8rem 0;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    .hero_title {
+      max-width: 80rem;
+    }
+
+    .hero_linkcv {
+      margin: 0 auto;
+      display: block;
+      @include button;
+    }
+  }
   
+
+// Main Container *****************************************************************************
+
   .main_container {
     width: min(100% - (2.4rem) * 2, 144rem);
     margin-inline: auto;
   }
 
-  .hero_linkcv {
-    margin: 10rem auto 10rem;
-    display: block;
-    @include button;
-  }
-  
+// About ***************************************************************************************
+
   .about {
-    margin-top: 10rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    @include wrap_section_mobile;
+
+    .about_text {
+      max-width: 65rem;
+
+      background-color: $Body-blue;
+      border-radius: 1.6rem;
+      padding: 4rem;
+      line-height: 180%;
+      letter-spacing: 0.1ch;
+    }
   }
 
-  .about_text {
-    background-color: $Body-blue;
-    border-radius: 1.6rem;
-    padding: 4rem;
-    line-height: 180%;
-    letter-spacing: 0.1ch;
+
+// Skills ***************************************************************************************
+
+  .skills {
+    // width: min(100%, 50rem);
+    // max-width: 100rem;
+    // margin-inline: auto;
+    // margin: 0 auto;
+    @include wrap_section_mobile;
+    
+    // width: min(100% - (2.4rem) * 2, 100rem);
+    // place-items: center;
+
+      
+      .skills_cards_flex {
+        // width: fit-content;
+        // max-width: 100rem;
+        // margin: 0 auto;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 4rem;
+      }
+    
+
   }
 
-  .skills_cards_wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 4rem;
+// Projects **************************************************************************************
+
+  .projects {
+    @include wrap_section_mobile;
+
+    .projects_cards_wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 8rem;
+    }
   }
 
-  .projects_cards_wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 8rem;
+// Contact ***************************************************************************************
+
+  .contact {
+    max-width: 100rem;
+    margin: 0 auto;
+    @include wrap_section_mobile;
+    
   }
+
+  @media (min-width: $Desktop) {
+
+    .about, .skills, .projects, .contact {
+
+      gap: 10rem;
+      margin-top: 20rem;
+    }
+
+    .about {
+      max-width: 60rem;
+    }
+
+    .hero {
+
+
+    .hero_linkcv {
+      margin: 0;
+    }
+  }
+  }
+
 
 
 </style>

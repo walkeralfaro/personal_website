@@ -25,6 +25,11 @@ body {
   background-size: 24px 24px;
 }
 
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-family: 'Sora';
   font-weight: 600;
@@ -35,15 +40,11 @@ h2 {
   font-family: 'Palanquin';
   font-weight: 400;
   font-size: 3rem;
-  margin: 8rem auto 6rem;
-  width: fit-content;
-
+  text-align: center;
 }
 
 h3 {
-  font-family: Palanquin;
-  margin: 0;
-  padding: 0;
+  font-family: 'Palanquin';
 }
 
 a {
@@ -59,3 +60,20 @@ a {
   }
 }
 
+@media (min-width: $Desktop) {
+  Body {
+    font-size: 2.2rem;
+  }
+
+  h1 {
+    font-size: 6.4rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+}
