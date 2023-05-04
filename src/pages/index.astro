@@ -126,11 +126,10 @@ import Footer from '../components/Footer.astro';
     }
   }
   
-
 // Main Container *****************************************************************************
 
   .main_container {
-    width: min(100% - (2.4rem) * 2, 144rem);
+    width: min(100% - (2.4rem) * 2, 100rem);
     margin-inline: auto;
   }
 
@@ -152,33 +151,17 @@ import Footer from '../components/Footer.astro';
     }
   }
 
-
 // Skills ***************************************************************************************
 
   .skills {
-    // width: min(100%, 50rem);
-    // max-width: 100rem;
-    // margin-inline: auto;
-    // margin: 0 auto;
     @include wrap_section_mobile;
-    
-    // width: min(100% - (2.4rem) * 2, 100rem);
-    // place-items: center;
 
-      
       .skills_cards_flex {
-        // width: fit-content;
-        // max-width: 100rem;
-        // margin: 0 auto;
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-        // display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         gap: 4rem;
       }
-    
-
   }
 
 // Projects **************************************************************************************
@@ -187,9 +170,8 @@ import Footer from '../components/Footer.astro';
     @include wrap_section_mobile;
 
     .projects_cards_wrap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 8rem;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 
@@ -197,32 +179,44 @@ import Footer from '../components/Footer.astro';
 
   .contact {
     max-width: 100rem;
-    margin: 0 auto;
     @include wrap_section_mobile;
-    
   }
+
+// MEDIA QUERIES =================================================================================
 
   @media (min-width: $Desktop) {
 
     .about, .skills, .projects, .contact {
-
       gap: 10rem;
       margin-top: 20rem;
+    }
+
+    .hero {
+      .hero_linkcv {
+        margin: 0;
+      }
     }
 
     .about {
       max-width: 60rem;
     }
 
-    .hero {
-
-
-    .hero_linkcv {
-      margin: 0;
+    .projects {
+      .projects_cards_wrap {
+        justify-content: space-between;
+      }
     }
   }
+
+// Light Theme ======================================================================================
+
+  .light-mode {
+
+    .about{
+      .about_text {
+        background-color: $Body-white;
+      }
+    }
   }
-
-
 
 </style>

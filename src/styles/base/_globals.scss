@@ -54,9 +54,9 @@ a {
 .light-mode {
 
   body {
-    background-color: $Background-Light;
-    color: $Body-black;
-
+    color: $Body-blue;
+    background-image:  linear-gradient($Background-line-Light 1.1px, transparent 1.1px), 
+    linear-gradient(to right, $Background-line-Light 1.1px, $Background-Light 1.1px);
   }
 }
 
