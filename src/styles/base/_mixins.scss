@@ -15,14 +15,14 @@
   text-align:center;
   cursor: pointer;
 
-  box-shadow: 5px 5px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 0px rgba(160, 160, 160, 0.7);
   transition: box-shadow .1s ease;
 
   &:hover {
     background-color: $Link-hover;
-    box-shadow: 7px 7px 0px rgba(255, 255, 255, 0.6);
+    box-shadow: 7px 7px 0px rgba(140, 140, 140, 0.7);
   }
-
+  
 }
 
 @mixin wrap_section_mobile {

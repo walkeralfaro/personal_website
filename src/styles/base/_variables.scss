@@ -13,7 +13,7 @@ $Gradient-purple:hsl(285, 98%, 36%);
 
 // Neutral:
 $Body-black: hsl(0, 0%, 0%);
-$Body-blue: hsl(229, 40%, 16%);
+$Body-blue: hsl(229, 41%, 16%);
 $Body-blue02: hsl(220, 25%, 47%);
 $Body-grey01: hsl(0, 0%, 40%);
 $Body-grey02: hsl(0, 0%, 60%);
@@ -22,7 +22,7 @@ $Body-white: hsl(0, 0%, 100%);
 
 // Link:
 $Link: hsl(320, 77%, 51%);
-$Link-hover: hsl(320, 90%, 40%);
+$Link-hover: hsl(320, 77%, 45%);
 
 // Screen sizes
 $Desktop: 1200px;
@@ -30,4 +30,4 @@ $Tablet: 800px;
 $Mobile: 375px;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300&family=Geo&family=Palanquin:wght@400;600&family=Sora:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300&family=Geo&family=Palanquin:wght@200;300;400;500;600&family=Sora:wght@600&display=swap');

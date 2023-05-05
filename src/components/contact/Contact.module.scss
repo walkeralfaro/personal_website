@@ -24,10 +24,6 @@
       font-size: 2rem;
       padding: 1rem;
 
-      &:valid {
-        background-color: $Body-grey03;
-      }
-
       &:focus {
         outline: 4px solid #609fff;
       }
@@ -82,10 +78,6 @@
   column-gap: 5rem;
   justify-content: space-between;
   height: 20rem;
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  // row-gap: 5rem;
-  // justify-items: center;
   align-items: center;
 
   .form_button {
@@ -108,14 +100,9 @@
     }
   }
 }
+// MEDIA QUERIES =============================================================================
 
 @media (min-width: $Tablet) {
-
-  .form_container {
-    .form_inputs {
-      margin-bottom: 1rem;
-    }
-  }
 
   .form_actions {
     flex-direction: row;
@@ -124,7 +111,6 @@
 
   }
 }
-
 
 
 // .toast {

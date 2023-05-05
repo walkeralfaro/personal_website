@@ -1,0 +1,62 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.light-mode {
+
+  body {
+    color: $Body-blue;
+    background-image:  linear-gradient($Background-line-Light 1.1px, transparent 1.1px), 
+    linear-gradient(to right, $Background-line-Light 1.1px, $Background-Light 1.1px);
+  }
+
+  .hero_header {
+    background: $Body-white;
+    border-bottom: 4px dashed $Body-blue;
+
+    label {
+      filter: invert(10%) sepia(41%) saturate(1125%) hue-rotate(195deg) brightness(92%) contrast(94%);
+    }
+
+    .button_theme {
+      background-color: $Gradient-blue;
+      background-image: url('/images/theme/moon.svg');
+      background-size: 70%;
+    }
+
+    .nav_local_links {
+      a {
+        color: $Body-blue;
+        &:hover {
+          color: $Link;
+        }
+      }
+    }
+
+    .header_logo {
+      filter: invert(10%) sepia(41%) saturate(1125%) hue-rotate(195deg) brightness(92%) contrast(94%);
+    }
+  }
+
+  .about {
+    .about_text {
+      background-color: $Body-white;
+    }
+  }
+
+  .skills {
+    .skill_card {
+      background-color: $Body-white;
+    }
+  }
+
+  .projects {
+    .project_card {
+      background-color: $Body-white;
+
+      &:nth-child(2) .project_card_image {
+        background-color: $Body-grey02;
+      }
+    }
+  }
+
+}

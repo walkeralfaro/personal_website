@@ -26,14 +26,14 @@ import Footer from '../components/Footer.astro';
           <h1 class="hero_title"> Hola, soy Walker Alfaro Desarrollador Web </h1>
           <a class="hero_linkcv" href="https://drive.google.com/file/d/1_dGxfkCMLtio8Pvpo5pINHC0glTUxXWg/view?usp=share_link" target="_blank" >Mi CV</a>
         </section>
-
+        
       </div>
     </div>
 
     <main class="main_container">
     
-      <section class="about">
-        <h2 class="about_title">Un poco sobre mi</h2>
+      <section class="about" id="about">
+        <h2 class="about_title">Un poco sobre mí</h2>
         <div class="about_text">
           <p>Me llamo Walker Alfaro, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
           <p>Actualmente me dedico al desarrollo de aplicaciones web principalmente bajo el stack MERN.</p>
@@ -43,16 +43,13 @@ import Footer from '../components/Footer.astro';
   
       <section class="skills" id="skills">
         <h2 class="skills_title">Tecnologías que utilizo</h2>
-        <div class="prueba">
 
-          <div class="skills_cards_flex">
-            {
-              SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
-                <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
-              ))
-            }
-          </div>
-
+        <div class="skills_cards_flex">
+          {
+            SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
+              <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
+            ))
+          }
         </div>
       </section>
   
@@ -94,8 +91,9 @@ import Footer from '../components/Footer.astro';
   
   .hero_header {
     
-    padding:0 calc((100vw - 144rem)/2);
+    padding: 2rem calc((100vw - 140rem)/2) 0;
     background: linear-gradient(90deg, $Gradient-blue -1.35%, $Gradient-purple 102.19%);
+
     
     .hero_header_container{
       width: min(100% - (2.4rem) * 2, 144rem);
@@ -108,7 +106,7 @@ import Footer from '../components/Footer.astro';
 
   .hero {
     max-width: 100rem;
-    padding: 8rem 0;
+    padding: 15rem 0;
     margin: 0 auto;
 
     display: flex;
@@ -139,16 +137,16 @@ import Footer from '../components/Footer.astro';
     max-width: 40rem;
     margin: 0 auto;
     @include wrap_section_mobile;
+  }
 
-    .about_text {
-      max-width: 65rem;
+  .about_text {
+    max-width: 65rem;
 
-      background-color: $Body-blue;
-      border-radius: 1.6rem;
-      padding: 4rem;
-      line-height: 180%;
-      letter-spacing: 0.1ch;
-    }
+    background-color: $Body-blue;
+    border-radius: 1.6rem;
+    padding: 4rem;
+    line-height: 180%;
+    letter-spacing: 0.1ch;
   }
 
 // Skills ***************************************************************************************
@@ -210,13 +208,6 @@ import Footer from '../components/Footer.astro';
 
 // Light Theme ======================================================================================
 
-  .light-mode {
 
-    .about{
-      .about_text {
-        background-color: $Body-white;
-      }
-    }
-  }
 
 </style>

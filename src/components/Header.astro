@@ -3,48 +3,169 @@ import HeaderLink from './HeaderLink.astro';
 import gitHub_logo from '/images/social/github.svg';
 import linkedIn_logo from '/images/social/linkedin.svg';
 import dribbble_logo from '/images/social/dribbble.svg';
-import logo from '../../favicon.svg';
+import logo from '/images/logo/logo.svg';
 ---
 
 <header>
-	<div class="header_logo">
-		<img src={logo} alt="logo_pagina_web" width="50">
-	</div>
-	<nav>
-		<div class="nav_local_links">
+
+	<nav class="navbar">
+
+		<img class="header_logo" src={logo} alt="logo_pagina_web" width="50">
+
+		<input type="checkbox" id="toggler">
+		<label for="toggler"></label>
+			
+		<div class="menu">
+			<div class="list nav_local_links">
 			<HeaderLink href="#about">acerca de mi</HeaderLink>
 			<HeaderLink href="#projects">proyectos</HeaderLink>
 			<HeaderLink href="#contact">contacto</HeaderLink>
+			</div>	
 		</div>
-		<div class="nav_external_links">
-			<button class="button_theme" id="button_toggle">T</button>
+
+		<div class="button_theme" id="button_toggle">
+			<i class="button_theme_image"></i>
+		</div>
+
+		<div class="menu">
+			<div class="list av_external_links">
 			<HeaderLink href="https://github.com/walkeralfaro" target="_blank">
-				<img src={gitHub_logo} alt="github_link" width="30" />
+				<img class="logo_social" src={gitHub_logo} alt="github_link"/>
 			</HeaderLink>
 			<HeaderLink href="https://linkedin.com/in/walkeralfaro/" target="_blank">
-				<img src={linkedIn_logo} alt="linkedin_link" width="30" />
+				<img class="logo_social" src={linkedIn_logo} alt="linkedin_link"/>
 			</HeaderLink>
 			<HeaderLink href="https://dribbble.com/walkeralfaro" target="_blank">
-				<img src={dribbble_logo} alt="dribbble_link" width="30" />
+				<img class="logo_social" src={dribbble_logo} alt="dribbble_link"/>
 			</HeaderLink>
+			</div>	
 		</div>
+
 	</nav>
+
 </header>
 
 <script>
-	const toggleButton = document.querySelector('#button_toggle');
-	const html = document.querySelector('html');
-	
-	toggleButton.addEventListener('click', () => {
-		html.classList.toggle('light-mode');
-	});
+  const toggleButton = document.querySelector('#button_toggle');
+  const html = document.querySelector('html');
+
+  toggleButton.addEventListener('click', () => {
+    html.classList.toggle('light-mode');
+  });
 </script>
 
-<style>
-	header {
-		margin: 0em 0 2em;
+<style lang="scss">
+	@use '../styles/base/_variables.scss' as *;
+
+	.navbar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
 	}
-	h2 {
-		margin: 0.5em 0;
+
+	.header_logo {
+		width: 6.5rem;
+		filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
 	}
+
+	.button_theme {
+		padding: .5rem;
+		height: 4.5rem;
+		width: 4.5rem;
+		border-radius: .8rem;
+		box-shadow: 4px 4px 0px rgba(160, 160, 160, 0.7);;
+		cursor: pointer;
+		
+		background-image: url('/images/theme/sun.svg');
+		background-color: $Body-white;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 85%;
+
+		&:hover{
+			box-shadow: 6px 6px 0px rgba(140, 140, 140, 0.7);
+
+		}
+	}
+
+	.list {
+		display: flex;
+		gap: 2.5rem;
+
+		.logo_social {
+			width: 4.5rem;
+		}
+	}
+
+	#toggler,
+	.navbar label {
+		display: none;
+	}
+
+// MEDIA QUERY ========================================================================
+
+	@media screen and (max-width: $Tablet) {
+
+		.navbar {
+			position: relative;
+		}
+
+		.header_logo {
+			width: 6rem;
+		}
+
+		.button_theme {
+			position: absolute;
+			top: 0;
+			right: 50px;
+			height: 4rem;
+			width: 4rem;
+			border-radius: .5rem;
+		}
+
+		label {
+			background-image: url('/images/navbar/menu.svg') ;
+			background-size:contain;
+			background-repeat: no-repeat;
+			padding: 1.5rem;
+			filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+		}
+
+		.menu {
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+		}
+
+		.list {
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.av_external_links {
+			margin-top: 7rem;
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		.navbar label {
+			display: inline-flex;
+			align-items: center;
+			cursor: pointer;
+		}
+
+		#toggler:checked ~ .menu {
+			max-height: 100%;
+		}
+
+		#toggler:checked ~ label {
+			background-image: url('/images/navbar/close.svg') ;
+			padding: 1.5rem;
+		}
+
+	}
+
+
 </style>
