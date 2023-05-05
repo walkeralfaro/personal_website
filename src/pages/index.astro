@@ -85,21 +85,19 @@ import Footer from '../components/Footer.astro';
 </body>
 </html>
 
+<!-- ESTILOS -->
 <style lang="scss">
   @use '../styles/base/_variables.scss' as *;
   @use '../styles/base/_mixins.scss' as *;
   
   .hero_header {
-    
-    padding: 2rem calc((100vw - 140rem)/2) 0;
+    padding-top: 2rem;
     background: linear-gradient(90deg, $Gradient-blue -1.35%, $Gradient-purple 102.19%);
 
-    
     .hero_header_container{
-      width: min(100% - (2.4rem) * 2, 144rem);
+      width: min(100% - (2.4rem) * 2, 120rem);
       margin-inline: auto;
     }
-    
   }
 
 // Hero *************************************************************************************
@@ -126,6 +124,7 @@ import Footer from '../components/Footer.astro';
   
 // Main Container *****************************************************************************
 
+  // Container de la página, con 1000px de ancho
   .main_container {
     width: min(100% - (2.4rem) * 2, 100rem);
     margin-inline: auto;
@@ -205,9 +204,5 @@ import Footer from '../components/Footer.astro';
       }
     }
   }
-
-// Light Theme ======================================================================================
-
-
 
 </style>

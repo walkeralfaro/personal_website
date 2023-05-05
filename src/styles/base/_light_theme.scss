@@ -1,6 +1,9 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// Tema Light o luminoso, ya que la página por defecto carga en modo nocturno
+// Esta clase se agrega a la etiqueta <html>
+// Para que haga efecto la especifidad debe ser igual o mayor a la especifidad en modo nocturno
 .light-mode {
 
   body {

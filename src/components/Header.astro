@@ -45,10 +45,11 @@ import logo from '/images/logo/logo.svg';
 
 </header>
 
+<!-- Este Scrip permite el modo Light -->
 <script>
   const toggleButton = document.querySelector('#button_toggle');
   const html = document.querySelector('html');
-
+	// Se lee el botón de tema y se le asigna la clase 'light-mode' a <html>
   toggleButton.addEventListener('click', () => {
     html.classList.toggle('light-mode');
   });
