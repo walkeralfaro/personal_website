@@ -30,4 +30,50 @@ $Tablet: 800px;
 $Mobile: 375px;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300&family=Geo&family=Palanquin:wght@200;300;400;500;600&family=Sora:wght@600&display=swap');
+@font-face {
+  font-family: 'Biryani-ExtraLight';
+  src: url('/fonts/Biryani-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Biryani-Light';
+  src: url('/fonts/Biryani-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geo-Regular';
+  src: url('/fonts/Geo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Palanquin-Regular';
+  src: url('/fonts/Palanquin-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Palanquin-SemiBold';
+  src: url('/fonts/Palanquin-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora-SemiBold';
+  src: url('/fonts/Sora-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

@@ -10,7 +10,7 @@ import logo from '/images/logo/logo.svg';
 
 	<nav class="navbar">
 
-		<img class="header_logo" src={logo} alt="logo_pagina_web" width="50">
+		<img class="header_logo" src={logo} alt="logo_pagina_web" width="50" loading="lazy">
 
 		<input type="checkbox" id="toggler">
 		<label for="toggler"></label>
@@ -23,20 +23,26 @@ import logo from '/images/logo/logo.svg';
 			</div>	
 		</div>
 
-		<div class="button_theme" id="button_toggle">
-			<i class="button_theme_image"></i>
-		</div>
+		<!-- <div class="button_theme" id="themeToggle">
+		</div> -->
+
+		<button id="themeToggle" class="button_theme">
+			<svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path class="sun" fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.8.8 0 0 1-.8.8h-2.4a.8.8 0 0 1 0-1.6h2.4a.8.8 0 0 1 .8.8zM4 12a.8.8 0 0 1-.8.8H.8a.8.8 0 0 1 0-1.6h2.5a.8.8 0 0 1 .8.8zm16.5-8.5a.8.8 0 0 1 0 1l-1.8 1.8a.8.8 0 0 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM6.3 17.7a.8.8 0 0 1 0 1l-1.7 1.8a.8.8 0 1 1-1-1l1.7-1.8a.8.8 0 0 1 1 0zM12 0a.8.8 0 0 1 .8.8v2.5a.8.8 0 0 1-1.6 0V.8A.8.8 0 0 1 12 0zm0 20a.8.8 0 0 1 .8.8v2.4a.8.8 0 0 1-1.6 0v-2.4a.8.8 0 0 1 .8-.8zM3.5 3.5a.8.8 0 0 1 1 0l1.8 1.8a.8.8 0 1 1-1 1L3.5 4.6a.8.8 0 0 1 0-1zm14.2 14.2a.8.8 0 0 1 1 0l1.8 1.7a.8.8 0 0 1-1 1l-1.8-1.7a.8.8 0 0 1 0-1z"/>
+				<path class="moon" fill-rule="evenodd" d="M16.5 6A10.5 10.5 0 0 1 4.7 16.4 8.5 8.5 0 1 0 16.4 4.7l.1 1.3zm-1.7-2a9 9 0 0 1 .2 2 9 9 0 0 1-11 8.8 9.4 9.4 0 0 1-.8-.3c-.4 0-.8.3-.7.7a10 10 0 0 0 .3.8 10 10 0 0 0 9.2 6 10 10 0 0 0 4-19.2 9.7 9.7 0 0 0-.9-.3c-.3-.1-.7.3-.6.7a9 9 0 0 1 .3.8z"/>
+			</svg>
+		</button>
 
 		<div class="menu">
 			<div class="list av_external_links">
 			<HeaderLink href="https://github.com/walkeralfaro" target="_blank">
-				<img class="logo_social" src={gitHub_logo} alt="github_link"/>
+				<img class="logo_social" src={gitHub_logo} alt="github_link" loading="lazy"/>
 			</HeaderLink>
 			<HeaderLink href="https://linkedin.com/in/walkeralfaro/" target="_blank">
-				<img class="logo_social" src={linkedIn_logo} alt="linkedin_link"/>
+				<img class="logo_social" src={linkedIn_logo} alt="linkedin_link" loading="lazy"/>
 			</HeaderLink>
 			<HeaderLink href="https://dribbble.com/walkeralfaro" target="_blank">
-				<img class="logo_social" src={dribbble_logo} alt="dribbble_link"/>
+				<img class="logo_social" src={dribbble_logo} alt="dribbble_link" loading="lazy"/>
 			</HeaderLink>
 			</div>	
 		</div>
@@ -47,7 +53,7 @@ import logo from '/images/logo/logo.svg';
 
 <!-- Este Scrip permite el modo Light -->
 <script>
-  const toggleButton = document.querySelector('#button_toggle');
+  const toggleButton = document.querySelector('#themeToggle');
   const html = document.querySelector('html');
 	// Se lee el botón de tema y se le asigna la clase 'light-mode' a <html>
   toggleButton.addEventListener('click', () => {
@@ -71,24 +77,22 @@ import logo from '/images/logo/logo.svg';
 	}
 
 	.button_theme {
-		padding: .5rem;
+    border: 0;
 		height: 4.5rem;
 		width: 4.5rem;
+    background-color: $Body-white;	
 		border-radius: .8rem;
-		box-shadow: 4px 4px 0px rgba(160, 160, 160, 0.7);;
+		box-shadow: 4px 4px 0px rgba(160, 160, 160, 0.7);
 		cursor: pointer;
-		
-		background-image: url('/images/theme/sun.svg');
-		background-color: $Body-white;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 85%;
 
 		&:hover{
 			box-shadow: 6px 6px 0px rgba(140, 140, 140, 0.7);
-
 		}
-	}
+  }
+
+	.sun { fill: $Gradient-blue; }
+	
+	.moon { fill: transparent; }
 
 	.list {
 		display: flex;

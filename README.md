@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# Personal Page
 
 ```
 npm create astro@latest -- --template minimal
@@ -45,3 +45,26 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+# Personal Website
+
+## Objetivo
+Esta es mi página web personal, tiene como finalidad darme una presencia en internet, ser una ventana a mis proyectos e ir aprendiendo durante su desarrollo y operación. Sin duda habrán mejoras que requiere en su estado actual y posibles secciones nuevas, lo que se detallará más adelante en la sección TODO.
+
+## Tabla de contenido
+[Objetivo](#objetivo)
+
+## El Reto
+Las características que debe tener el sitio:
+- Modos oscuro y luminoso.
+- Una sección de contacto.
+- Acceso a mi CV.
+- Acceso a mis redes sociales profesionales.
+- Resumen de habilidades.
+- Resumen y acceso a proyectos.
+- Diseño responsivo.
+- Visualmente agradable (subjetivo 😅).
+
+## Desarrollo
+### Tecnologías Utilizadas
+- Astro como framework de trabajo

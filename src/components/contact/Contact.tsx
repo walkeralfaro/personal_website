@@ -2,7 +2,7 @@ import styles from './Contact.module.scss';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import gitHub_logo from '/images/social/github.svg';
 import linkedIn_logo from '/images/social/linkedin.svg';
@@ -128,7 +128,7 @@ export default function Contact({contact_api}: Props) {
         </div>
 
       </form>
-      <ToastContainer className={styles.toast}/>
+      <ToastContainer />
     </div>
   )
 }

@@ -19,8 +19,8 @@
       height: 1rem;
       min-height: 5rem;
 
-      font-family: Biryani;
-      font-weight: 600;
+      font-family: 'Biryani-Light', sans-serif;
+      font-weight: 300;
       font-size: 2rem;
       padding: 1rem;
 
@@ -46,7 +46,7 @@
       position: relative;
 
       label {
-        font-family: Palanquin;
+        font-family: 'Palanquin-SemiBold', sans-serif;
         font-weight: 600;
         font-size: 2rem;
       }
@@ -63,7 +63,7 @@
     position: absolute;
 
     color: $Link;
-    font-family: Palanquin;
+    font-family: 'Palanquin-SemiBold', sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
 
@@ -85,15 +85,13 @@
     button {
       @include button;
     }
-
-
   }
 
   .social_links {
     display: flex;
     justify-content: center;
     gap: 2.4rem;
-    width: 18rem;
+    width: fit-content;
 
     img {
       width: 5rem;
@@ -111,8 +109,3 @@
 
   }
 }
-
-
-// .toast {
-//   --toastify-color-success: linear-gradient(140deg, rgba(23,33,107,1) 0%, rgba(179,35,132,0.8155637254901961) 100%);
-// }

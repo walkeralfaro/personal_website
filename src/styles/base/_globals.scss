@@ -12,8 +12,7 @@ html {
 
 body {
   color: $Body-white;
-  font-family: 'Biryani', sans-serif;
-  font-weight: 200;
+  font-family: 'Biryani-ExtraLight', sans-serif;
   font-size: 1.6rem;
 
   text-align: left;
@@ -32,20 +31,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-family: 'Sora';
-  font-weight: 600;
+  font-family: 'Sora-SemiBold', sans-serif;
   font-size: 4rem;
 }
 
 h2 {
-  font-family: 'Palanquin';
+  font-family: 'Palanquin-Regular', sans-serif;
   font-weight: 400;
   font-size: 3rem;
   text-align: center;
 }
 
 h3 {
-  font-family: 'Palanquin';
+  font-family: 'Palanquin-SemiBold', sans-serif;
 }
 
 a {

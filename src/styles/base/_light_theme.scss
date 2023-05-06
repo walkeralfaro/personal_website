@@ -21,10 +21,14 @@
     }
 
     .button_theme {
+      border: 0;
       background-color: $Gradient-blue;
-      background-image: url('/images/theme/moon.svg');
-      background-size: 70%;
+      padding-bottom: .3rem;
     }
+
+    .sun { fill: transparent; }
+    
+    .moon { fill: $Body-white; }
 
     .nav_local_links {
       a {
