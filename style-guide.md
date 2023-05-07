@@ -35,7 +35,7 @@ The designs were created to the following widths:
 
 ### Body Copy
 
-- Font size desktop: 24px
+- Font size desktop: 22px
 - Font size mobile: 16px
 
 ### Font

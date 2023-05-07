@@ -54,7 +54,7 @@ Esta es mi página web personal, tiene como finalidad darme una presencia en int
 ## Tabla de contenido
 [Objetivo](#objetivo)
 
-## El Reto
+## El Reto 🤺
 Las características que debe tener el sitio:
 - Modos oscuro y luminoso.
 - Una sección de contacto.
@@ -63,19 +63,22 @@ Las características que debe tener el sitio:
 - Resumen de habilidades.
 - Resumen y acceso a proyectos.
 - Diseño responsivo.
-- Visualmente agradable (subjetivo 😅).
+- Visualmente agradable.
 
-## Desarrollo
+## Desarrollo 🧑🏻‍💻
 ### Tecnologías Utilizadas
 - **Astro** - framework MPA
 - **Sass** - Css con superpoderes
-- **React** - framework reactivo
+- **React** - isla interactiva
 - **Hook-form** - Manejar el estado del formulario
 - **Toastify** - notificaciones en pantalla
 
-### Flujo
-#### Diseño
+### Diseño
 - El contenido se elaboró en Notion, indicando las secciones que debe tener y su contenido.
 - Se diseñaron los wireframes en Figma para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Home%20-%20Desktop.jpg) y para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Home%20-%20Mobile.png)
-- En prototipo en alta calidad igualmente se diseño en Figma, se eligieron los colores, íconos, ilustraciones acordes al estilo de la página. El diseño final para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Webpage.png) como para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Phone.png).
-- Se añadió el tema [luminoso]()
+- El prototipo en alta calidad igualmente se diseño en Figma, se eligieron los colores, íconos, ilustraciones acordes al estilo de la página. El diseño final para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Webpage.png) como para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Phone.png).
+- Se añadió el Tema [Luminoso](https://github.com/walkeralfaro/personal_website/blob/main/design/Webpage%20-light.png).
+- Se entrega la guía de estilos que contiene los colores, fuentes y dimensiones.
+
+### Programación
+- Se dividió la página en secciones, para definir las jerarquías para que la semántica sea la correcta
