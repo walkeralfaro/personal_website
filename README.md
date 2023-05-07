@@ -76,5 +76,6 @@ Las características que debe tener el sitio:
 ### Flujo
 #### Diseño
 - El contenido se elaboró en Notion, indicando las secciones que debe tener y su contenido.
-- Se diseñaron los wireframes en Figma para
-- El diseño se realizó en Figma
+- Se diseñaron los wireframes en Figma para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Home%20-%20Desktop.jpg) y para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Home%20-%20Mobile.png)
+- En prototipo en alta calidad igualmente se diseño en Figma, se eligieron los colores, íconos, ilustraciones acordes al estilo de la página. El diseño final para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Webpage.png) como para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Phone.png).
+- Se añadió el tema [luminoso]()
