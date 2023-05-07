@@ -67,4 +67,14 @@ Las características que debe tener el sitio:
 
 ## Desarrollo
 ### Tecnologías Utilizadas
-- Astro como framework de trabajo
+- **Astro** - framework MPA
+- **Sass** - Css con superpoderes
+- **React** - framework reactivo
+- **Hook-form** - Manejar el estado del formulario
+- **Toastify** - notificaciones en pantalla
+
+### Flujo
+#### Diseño
+- El contenido se elaboró en Notion, indicando las secciones que debe tener y su contenido.
+- Se diseñaron los wireframes en Figma para
+- El diseño se realizó en Figma
