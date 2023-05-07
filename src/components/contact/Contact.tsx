@@ -56,7 +56,7 @@ export default function Contact({contact_api}: Props) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.form_inputs}>
           <div className={styles.form_input}>
-            <label htmlFor="name">name</label>
+            <label htmlFor="name">nombre</label>
             <input type="text" id="name" className={errors.name && styles.inputError}
             {...register('name', {
               required: true,
