@@ -111,7 +111,7 @@ export default function Contact({contact_api}: Props) {
 
         <div className={styles.form_actions}>
           <div className={styles.form_button}>
-            <button type="submit">Enviar</button>
+            <button type="submit" aria-label="submit">Enviar</button>
           </div>
 
           <div className={styles.social_links}>

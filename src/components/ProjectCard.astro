@@ -11,10 +11,10 @@ const { link, title, description, image, technologies } = Astro.props;
 const pDescription =  description.split('\n');
 ---
 <div class="project_card">
-  <a class="project_card_link" href={link} target="_blank"></a>
+  <a class="project_card_link" href={link} target="_blank" aria-label={title}></a>
 
   <div class="project_card_image">
-    <img src={image} alt="referral image of the project" loading="lazy">
+    <img src={image} alt="referral image of the project" loading="lazy" alt={title}>
   </div>
   <div class="project_card_content">
     <h3 class="project_card_title">{title}</h3>

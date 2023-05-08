@@ -1,5 +1,4 @@
 ---
-import "../styles/main.scss";
 export interface Props {
   title: string;
   skills: string[];
@@ -12,7 +11,7 @@ const {title, skills, image} = Astro.props;
 
   <h3 class="skill_card_title">{title}</h3>
   <div class="skill_card_content">
-    <img class="skill_card_image" src={image}/>
+    <img class="skill_card_image" src={image} loading="lazy" alt={title}/>
     <div class="skill_card_technologies">
       {
         skills.map( skill =>  ( <p class="skill_card_technology">{skill}</p> ) )

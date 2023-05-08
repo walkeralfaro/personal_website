@@ -84,9 +84,9 @@ Las características que debe tener el sitio:
   - Headless CMS para administrar el contenido de la página principal y del Blog.
 
 - Mejoras:
-  - La carga de SVGs
+  - ~~La carga de SVGs~~ (fix: 08-05-23)
   - Smooth scroll sin JS, sólo con CSS
-  - Accesibilidad
-  - Logo debe redireccionar '/'
+  - ~~Accesibilidad~~ (fix: 08-05-23)
+  - ~~Logo debe redireccionar '/'~~ (fix: 08-05-23)
   - Refactoring Estilos Sass
   - Separa en ramas el desarrollo
