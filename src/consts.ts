@@ -39,7 +39,7 @@ export const PROJECTS = [
     "projectTitle": "frontend mentor challenges",
     "projectDescription": "Retos de programación frontend que ponen a prueba estas habilidades de desarrollo.\nEstos retos fueron resueltos con React, Vue3 o JS vanilla.",
     "projectTechnologies": [
-      "html", "css", "javascript", "react", "vue", "sass", "gulp"
+      "html5", "css3", "js", "react", "vue", "sass", "gulp"
     ]
   },
   {
