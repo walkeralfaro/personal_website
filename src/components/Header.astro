@@ -3,17 +3,25 @@ import HeaderLink from './HeaderLink.astro';
 import gitHub_logo from '/images/social/github.svg';
 import linkedIn_logo from '/images/social/linkedin.svg';
 import dribbble_logo from '/images/social/dribbble.svg';
-import logo from '/images/logo/logo.svg';
 ---
 
 <header>
 
 	<nav class="navbar">
 
-		<img class="header_logo" src={logo} alt="logo_pagina_web" width="50" loading="lazy">
+		<HeaderLink href="/">
+			<svg class="header_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 28.2">
+				<path d="M31.8 0v28.2h4.8v-12h6.6v12H48V0zm4.8 4.8h6.6v6.6h-6.6zM26.4 0h-4.8v23.4h-6V0h-4.8v23.4h-6V0H0v28.2h26.4z"/>
+			</svg>
+		</HeaderLink>
 
 		<input type="checkbox" id="toggler">
-		<label for="toggler"></label>
+		<label for="toggler" class="menu_toggler">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 384">
+				<path class="menu_bars" fill-rule="evenodd" d="M0 32C0 14 14 0 32 0h384c18 0 32 14 32 32s-14 32-32 32H32C14 64 0 50 0 32zm0 160c0-18 14-32 32-32h384c18 0 32 14 32 32s-14 32-32 32H32c-18 0-32-14-32-32zm448 160c0 18-14 32-32 32H32c-18 0-32-14-32-32s14-32 32-32h384c18 0 32 14 32 32z"/>
+				<path class="menu_close" fill-rule="evenodd" d="M405 66c15-15 15-40 0-55s-40-15-55 0L224 138 98 11C83-4 58-4 43 11s-15 40 0 55l127 126L43 318c-15 15-15 40 0 55s40 15 55 0l126-127 126 127c15 15 40 15 55 0s15-40 0-55L278 192 405 66z"/>
+			</svg>
+		</label>
 			
 		<div class="menu">
 			<div class="list nav_local_links">
@@ -69,8 +77,8 @@ import logo from '/images/logo/logo.svg';
 	}
 
 	.header_logo {
-		width: 6.5rem;
-		filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+		fill: $Body-white;
+		height: 4.5rem;
 	}
 
 	.button_theme {
@@ -101,7 +109,7 @@ import logo from '/images/logo/logo.svg';
 	}
 
 	#toggler,
-	.navbar label {
+	.menu_toggler {
 		display: none;
 	}
 
@@ -114,7 +122,8 @@ import logo from '/images/logo/logo.svg';
 		}
 
 		.header_logo {
-			width: 6rem;
+			height: 4rem;
+			fill: $Body-white;
 		}
 
 		.button_theme {
@@ -123,15 +132,22 @@ import logo from '/images/logo/logo.svg';
 			right: 50px;
 			height: 4rem;
 			width: 4rem;
+			border: 0;
 			border-radius: .5rem;
 		}
 
-		label {
-			background-image: url('/images/navbar/menu.svg') ;
-			background-size:contain;
-			background-repeat: no-repeat;
-			padding: 1.5rem;
-			filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+		.menu_toggler {
+			width: 4rem;
+			display: inline-flex;
+			cursor: pointer;
+		}
+
+		.menu_close {
+			fill: transparent;
+		}
+
+		.menu_bars {
+			fill: $Body-white;
 		}
 
 		.menu {
@@ -152,19 +168,18 @@ import logo from '/images/logo/logo.svg';
 			justify-content: center;
 		}
 
-		.navbar label {
-			display: inline-flex;
-			align-items: center;
-			cursor: pointer;
-		}
-
 		#toggler:checked ~ .menu {
 			max-height: 100%;
 		}
 
-		#toggler:checked ~ label {
-			background-image: url('/images/navbar/close.svg') ;
-			padding: 1.5rem;
+		#toggler:checked ~ .menu_toggler {
+			.menu_close {
+				fill: $Body-white;
+			}
+
+			.menu_bars {
+				fill: transparent;
+			}
 		}
 
 	}

@@ -16,20 +16,39 @@
     background: $Body-white;
     border-bottom: 4px dashed $Body-blue;
 
-    label {
-      filter: invert(10%) sepia(41%) saturate(1125%) hue-rotate(195deg) brightness(92%) contrast(94%);
-    }
-
+    // Botón de cambio de tema ==========================================
     .button_theme {
-      border: 0;
       background-color: $Gradient-blue;
       padding-bottom: .3rem;
     }
-
+    // el path svg - icono de sol se apaga
     .sun { fill: transparent; }
     
+    // el path svg - icono de la luna se activa
     .moon { fill: $Body-white; }
 
+    // Botón de menú =====================================================
+    // el path svg - icono de close de menú apagada
+    .menu_close {
+			fill: transparent;
+		}
+
+    // el path svg - icono de barras de menú activada en modo luminoso
+		.menu_bars {
+      fill: $Body-blue;
+		}
+    
+    #toggler:checked ~ .menu_toggler {
+			.menu_close {
+				fill: $Body-blue;
+			}
+
+			.menu_bars {
+				fill: transparent;
+			}
+		}
+
+    // los links del navbar en modo luminoso ===============================
     .nav_local_links {
       a {
         color: $Body-blue;
@@ -40,7 +59,7 @@
     }
 
     .header_logo {
-      filter: invert(10%) sepia(41%) saturate(1125%) hue-rotate(195deg) brightness(92%) contrast(94%);
+      fill: $Body-blue;
     }
   }
 
