@@ -88,5 +88,5 @@ Las características que debe tener el sitio:
   - Smooth scroll sin JS, sólo con CSS
   - ~~Accesibilidad~~ (fix: 08-05-23)
   - ~~Logo debe redireccionar '/'~~ (fix: 08-05-23)
-  - Refactoring Estilos Sass
+  - Refactoring Estilos Sass - procurar que no hayan componentes con estilos
   - Separa en ramas el desarrollo

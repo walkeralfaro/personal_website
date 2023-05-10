@@ -1,5 +1,4 @@
 ---
-import "../styles/main.scss";
 import BaseHead  from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 
@@ -7,13 +6,12 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <BaseHead title={NOTFOUND_TITLE} description={SITE_DESCRIPTION}/>
 </head>
 
 <body>
-
 
   <main class="content_404">
     <h1 class="title_404">¿Qué haces?</h1>
@@ -24,10 +22,6 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
     <h2>404 not found</h2>
     <Footer />
   </main>
-
-
-
-
 
 </body>
 
@@ -47,7 +41,6 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
   }
   
   .title_404 {
-    // font-size: 3rem;
     padding-top: 4rem;
   }
 
@@ -61,6 +54,5 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
       height: 90%;
     }
   }
-
 
 </style>
