@@ -1,4 +1,6 @@
 export const SITE_TITLE = 'Walker Alfaro';
+export const NOTFOUND_TITLE = '404 | Walker Alfaro';
+
 export const SITE_DESCRIPTION = 'Hi, my name is Walker Alfaro Trelles, this is a little space where share about me :)';
 export const SKILLS = [
   {

@@ -11,7 +11,7 @@
     - [Programación](#programación)
       - [Integraciones](#integraciones)
       - [Componentes](#componentes)
-  - [Tareas Pendientes \&#1f680;](#tareas-pendientes-1f680)
+  - [Tareas Pendientes](#tareas-pendientes)
 
 ## Objetivo
 Esta es mi página web personal, tiene como finalidad darme una presencia en internet, ser una ventana a mis proyectos e ir aprendiendo durante su desarrollo y operación. Sin duda habrán mejoras que requiere en su estado actual y posibles secciones nuevas, lo que se detallará más adelante en la sección *TODO*.
@@ -75,7 +75,7 @@ Las características que debe tener el sitio:
 - La página se dividió en componentes para facilitar su desarrollo y mantenimiento. Se tienen los componentes: **BaseHead** (```<head></head>```), **Header**, **HeaderLink**, **ProjectCard**, **SkillCard**, **Footer**.
 - Los componenetes ProjectCard y SkillCard leen su contenido desde un archivo de constantes **consts.ts** en formato JSON, esto es para facilitar la edición del contenido de estos componentes.
 
-## Tareas Pendientes &#1f680;
+## Tareas Pendientes
 
 - Secciones adicionales:
   - 404 not found page
