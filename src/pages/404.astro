@@ -16,12 +16,12 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
 
 
   <main class="content_404">
-    <h1 class="title_404">¿Cómo llegaste aquí?</h1>
+    <h1 class="title_404">¿Qué haces?</h1>
 
     <a class="icon_404" href="https://walkeralfaro.com/">
-      <img src="/images/404/logo-color.svg" alt="logo" loading="lazy" />
+      <img class="thinking_404" src="/images/404/404.webp" alt="404 image" loading="lazy" />
     </a>
-    <img class="thinking_404" src="/images/404/404.webp" alt="404 image" loading="lazy" />
+    <h2>404 not found</h2>
     <Footer />
   </main>
 
@@ -32,6 +32,7 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
 </body>
 
 <style lang="scss">
+  @use '../styles/base/_variables.scss' as *;
 
   .content_404 {
     display: flex;
@@ -39,23 +40,27 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
     flex-direction: column;
     align-items: center;
     height: 100vh;
+
+    h2 {
+      color: $Link ;
+    }
   }
   
   .title_404 {
-    font-size: 3rem;
+    // font-size: 3rem;
     padding-top: 4rem;
   }
 
-  .icon_404 {
-    height: 10%;
+  .icon_404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
 
-    img {
-      height: 100%;
+    .thinking_404 {
+      height: 90%;
     }
   }
 
-  .thinking_404 {
-    height: 40%;
-  }
 
 </style>
