@@ -1,7 +1,6 @@
 ---
 import "../styles/main.scss";
 import BaseHead  from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
@@ -14,6 +13,49 @@ import { NOTFOUND_TITLE, SITE_DESCRIPTION } from '../consts';
 </head>
 
 <body>
-  <h1>que haces aca?</h1>
+
+
+  <main class="content_404">
+    <h1 class="title_404">¿Cómo llegaste aquí?</h1>
+
+    <a class="icon_404" href="https://walkeralfaro.com/">
+      <img src="/images/404/logo-color.svg" alt="logo" loading="lazy" />
+    </a>
+    <img class="thinking_404" src="/images/404/404.png" alt="404 image" loading="lazy" />
+    <Footer />
+  </main>
+
+
+
+
 
 </body>
+
+<style lang="scss">
+
+  .content_404 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .title_404 {
+    font-size: 3rem;
+    padding-top: 4rem;
+  }
+
+  .icon_404 {
+    height: 10%;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .thinking_404 {
+    height: 40%;
+  }
+
+</style>
