@@ -45,7 +45,7 @@ export const PROJECTS = [
     ]
   },
   {
-    "projectLink": "https://www.frontendmentor.io/profile/WalkerAlfaro",
+    "projectLink": "http://weatherapp.walkeralfaro.com/",
     "projectImage": "/images/projects/weather.svg",
     "projectTitle": "estación metereológica",
     "projectDescription": "Se implementó en una placa ESP8266, mide variables como temperatura y presión.\nUtiliza el protocolo MQTT (IoT) en su comunicación con el backend.",
