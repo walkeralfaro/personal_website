@@ -48,7 +48,7 @@ export const PROJECTS = [
     "projectLink": "http://weatherapp.walkeralfaro.com/",
     "projectImage": "/images/projects/weather.svg",
     "projectTitle": "estación metereológica",
-    "projectDescription": "Se implementó en una placa ESP8266, mide variables como temperatura y presión.\nUtiliza el protocolo MQTT (IoT) en su comunicación con el backend.",
+    "projectDescription": "Implementada en una placa ESP8266, mide variables de temperatura, humedad y luminosidad.\nUtiliza el protocolo MQTT (IoT) en su comunicación con el backend.",
     "projectTechnologies": [
       "react", "node", "express", "mongodb", "postman", "styled-component"
     ]
