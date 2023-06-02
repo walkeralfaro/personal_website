@@ -1,0 +1,77 @@
+---
+import BaseHead  from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import HeaderAlternative from '../components/HeaderAlternative.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+const { frontmatter } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <BaseHead title={frontmatter.title} description={SITE_DESCRIPTION}/>
+</head>
+<body>
+  <div class="container">
+
+    <div class="hero_header">
+      <div class="hero_header_container">
+        <HeaderAlternative/>
+    
+        <section class="hero">
+          <h1 class="hero_title">Documentation</h1>
+
+        </section>
+        
+      </div>
+    </div>
+    
+    
+    <div class="main_container">
+      <slot />
+    </div>
+
+
+  <Footer/>
+
+  <script src="../services/smooth.js"></script>
+</body>
+</html>
+
+<!-- ESTILOS -->
+<style lang="scss">
+  @use '../styles/base/_variables.scss' as *;
+  @use '../styles/base/_mixins.scss' as *;
+
+  .hero_header {
+    padding-top: 2rem;
+    background: linear-gradient(90deg, $Gradient-blue -1.35%, $Gradient-purple 102.19%);
+
+    .hero_header_container{
+      width: min(100% - (2.4rem) * 2, 120rem);
+      margin-inline: auto;
+    }
+  }
+
+  .hero {
+    max-width: 100rem;
+    padding: 15rem 0;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+  }
+
+  .main_container {
+    width: min(100% - (2.4rem) * 2, 100rem);
+    margin-inline: auto;
+    padding-bottom: 12rem;
+  }
+
+  h2 {
+    margin: 4rem auto;
+  }
+  
+
+</style>

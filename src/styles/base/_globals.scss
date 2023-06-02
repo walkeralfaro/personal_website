@@ -48,6 +48,15 @@ h3 {
 
 a {
   text-decoration: none;
+  color: $Link;
+
+  &:hover {
+    color: $Link;
+  }
+}
+
+img {
+  max-width: 50rem;
 }
 
 @media (min-width: $Desktop) {

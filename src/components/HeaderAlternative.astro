@@ -1,8 +1,5 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import gitHub_logo from '/images/social/github.svg';
-import linkedIn_logo from '/images/social/linkedin.svg';
-import dribbble_logo from '/images/social/dribbble.svg';
 ---
 
 <header>
@@ -22,15 +19,7 @@ import dribbble_logo from '/images/social/dribbble.svg';
 				<path class="menu_close" fill-rule="evenodd" d="M405 66c15-15 15-40 0-55s-40-15-55 0L224 138 98 11C83-4 58-4 43 11s-15 40 0 55l127 126L43 318c-15 15-15 40 0 55s40 15 55 0l126-127 126 127c15 15 40 15 55 0s15-40 0-55L278 192 405 66z"/>
 			</svg>
 		</label>
-			
-		<div class="menu">
-			<div class="list nav_local_links">
-			<HeaderLink href="#projects">proyectos</HeaderLink>
-			<HeaderLink href="#about">acerca de mi</HeaderLink>
-			<HeaderLink href="#contact">contacto</HeaderLink>
-			<HeaderLink href="/documentation">documentación</HeaderLink>
-			</div>	
-		</div>
+		
 
 		<button id="themeToggle" class="button_theme" aria-label="theme_toggle">
 			<svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -39,19 +28,6 @@ import dribbble_logo from '/images/social/dribbble.svg';
 			</svg>
 		</button>
 
-		<div class="menu">
-			<div class="list av_external_links">
-			<HeaderLink href="https://github.com/walkeralfaro" target="_blank">
-				<img class="logo_social" src={gitHub_logo} alt="github_link"/>
-			</HeaderLink>
-			<HeaderLink href="https://linkedin.com/in/walkeralfaro/" target="_blank">
-				<img class="logo_social" src={linkedIn_logo} alt="linkedin_link"/>
-			</HeaderLink>
-			<HeaderLink href="https://dribbble.com/walkeralfaro" target="_blank">
-				<img class="logo_social" src={dribbble_logo} alt="dribbble_link"/>
-			</HeaderLink>
-			</div>	
-		</div>
 
 	</nav>
 

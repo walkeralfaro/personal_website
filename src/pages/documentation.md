@@ -1,17 +1,10 @@
-# Personal Website
+---
+layout: ../layouts/MDLayout.astro
+title: "Documentación"
+author: "Walker"
+date: "09 Aug 2022"
+---
 
-## Tabla de contenido
-- [Personal Website](#personal-website)
-  - [Tabla de contenido](#tabla-de-contenido)
-  - [Objetivo](#objetivo)
-  - [El Reto 🤺](#el-reto-)
-  - [Desarrollo 🧑🏻‍💻](#desarrollo-)
-    - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-    - [Diseño](#diseño)
-  - [Programación](#programación)
-    - [Integraciones](#integraciones)
-    - [Componentes](#componentes)
-  - [Tareas Pendientes](#tareas-pendientes)
 
 ## Objetivo
 Esta es mi página web personal, tiene como finalidad darme una presencia en internet, ser una ventana a mis proyectos e ir aprendiendo durante su desarrollo y operación. Sin duda habrán mejoras que requiere en su estado actual y posibles secciones nuevas, lo que se detallará más adelante en la sección *TODO*.
@@ -37,13 +30,13 @@ Las características que debe tener el sitio:
 
 ### Diseño
 - El contenido se elaboró en Notion, resumiendo las secciones que debe tener y su contenido.
-- Se diseñaron los wireframes en Figma para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Home%20-%20Desktop.jpg) y para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Home%20-%20Mobile.png)
-- El prototipo en alta fidelidad igualmente se diseño en Figma, se eligieron los colores, íconos, ilustraciones acordes al estilo de la página. El diseño final para [Desktop](https://github.com/walkeralfaro/personal_website/blob/main/design/Webpage.png) como para [Móvil](https://github.com/walkeralfaro/personal_website/blob/main/design/Phone.png).
-- Se añadió el Tema [Luminoso](https://github.com/walkeralfaro/personal_website/blob/main/design/Webpage%20-light.png).
+- Se diseñaron los wireframes en Figma para **Desktop** y para **Móvil**
+- El prototipo en alta fidelidad igualmente se diseño en Figma, se eligieron los colores, íconos, ilustraciones acordes al estilo de la página. El diseño final para **Desktop** como para **Móvil**.
+- Se añadió el Tema **Luminoso**.
 - Se entrega la guía de estilos que contiene los colores, fuentes y dimensiones.
 
 ## Programación
-- Se dividió la página en [secciones](https://github.com/walkeralfaro/personal_website/blob/main/design/personal%20page%20structure.png), para definir las jerarquías para que la semántica sea la correcta:
+- Se dividió la página en **secciones**, para definir las jerarquías para que la semántica sea la correcta:
 
 ![Estructura del frontend](./design/personal%20page%20structure.png)
 
@@ -121,19 +114,3 @@ const onSubmit = async ( data: FormData ) => {
 ### Componentes
 - La página se dividió en componentes para facilitar su desarrollo y mantenimiento. Se tienen los componentes: **BaseHead** (```<head></head>```), **Header**, **HeaderLink**, **ProjectCard**, **SkillCard**, **Footer**.
 - Los componenetes ProjectCard y SkillCard leen su contenido desde un archivo de constantes **consts.ts** en formato JSON, esto es para facilitar la edición del contenido de estos componentes.
-
-## Tareas Pendientes
-
-- Secciones adicionales:
-  - 404 not found page
-  - Proyecto Weather Station (frontend pendiente)
-  - Blog.
-  - Headless CMS para administrar el contenido de la página principal y del Blog.
-
-- Mejoras:
-  - ~~La carga de SVGs~~ (fix: 08-05-23)
-  - Smooth scroll sin JS, sólo con CSS
-  - ~~Accesibilidad~~ (fix: 08-05-23)
-  - ~~Logo debe redireccionar '/'~~ (fix: 08-05-23)
-  - Refactoring Estilos Sass - procurar que no hayan componentes con estilos
-  - Separa en ramas el desarrollo
