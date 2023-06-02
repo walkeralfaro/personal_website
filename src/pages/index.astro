@@ -31,28 +31,7 @@ import Footer from '../components/Footer.astro';
     </div>
 
     <main class="main_container">
-    
-      <section class="about" id="about">
-        <h2 class="about_title">Un poco sobre mí</h2>
-        <div class="about_text">
-          <p>Me llamo Walker Alfaro Trelles, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
-          <p>Actualmente me dedico al desarrollo de aplicaciones web principalmente bajo el stack MERN.</p>
-          <p>Me implico en el flujo completo del desarrollo del software, desde la toma de requerimientos, pasando por la concepción de la solución, el diseño, el desarrollo y el testing.</p>
-        </div>
-      </section>
-  
-      <section class="skills" id="skills">
-        <h2 class="skills_title">Tecnologías que utilizo</h2>
 
-        <div class="skills_cards_flex">
-          {
-            SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
-              <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
-            ))
-          }
-        </div>
-      </section>
-  
       <section class="projects" id="projects">
         <h2 class="projects_title">Proyectos</h2>
         <div class="projects_cards_wrap">
@@ -67,6 +46,27 @@ import Footer from '../components/Footer.astro';
               />
             ))
           }
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <h2 class="skills_title">Tecnologías que utilizo</h2>
+
+        <div class="skills_cards_flex">
+          {
+            SKILLS.map( ({ skillImage, skillTitle, skillsGroup }) => (
+              <SkillCard image={skillImage} title={skillTitle} skills={skillsGroup} />
+            ))
+          }
+        </div>
+      </section>
+    
+      <section class="about" id="about">
+        <h2 class="about_title">Un poco sobre mí</h2>
+        <div class="about_text">
+          <p>Me llamo Walker Alfaro Trelles, soy programador, ingeniero electrónico y entusiasta de la tecnología.</p>
+          <p>Actualmente me dedico al desarrollo de aplicaciones web principalmente bajo el stack MERN.</p>
+          <p>Me implico en el flujo completo del desarrollo del software, desde la toma de requerimientos, pasando por la concepción de la solución, el diseño, el desarrollo y el testing.</p>
         </div>
       </section>
   

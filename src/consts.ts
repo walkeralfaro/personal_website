@@ -50,7 +50,7 @@ export const PROJECTS = [
     "projectTitle": "estación metereológica",
     "projectDescription": "Se implementó en una placa ESP8266, mide variables como temperatura y presión.\nUtiliza el protocolo MQTT (IoT) en su comunicación con el backend.",
     "projectTechnologies": [
-      "react", "node", "express", "mongodb", "postman"
+      "react", "node", "express", "mongodb", "postman", "styled-component"
     ]
   },
 ]
