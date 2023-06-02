@@ -37,9 +37,6 @@ Las características que debe tener el sitio:
 
 ## Programación
 - Se dividió la página en **secciones**, para definir las jerarquías para que la semántica sea la correcta:
-
-![Estructura del frontend](./design/personal%20page%20structure.png)
-
 - Se define la estructura de estilos en Sass:
 
 ```
