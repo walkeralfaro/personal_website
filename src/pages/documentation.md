@@ -1,13 +1,11 @@
 ---
 layout: ../layouts/MDLayout.astro
 title: "Documentación"
-author: "Walker"
-date: "09 Aug 2022"
 ---
 
 
-## Objetivo
-Esta es mi página web personal, tiene como finalidad darme una presencia en internet, ser una ventana a mis proyectos e ir aprendiendo durante su desarrollo y operación. Sin duda habrán mejoras que requiere en su estado actual y posibles secciones nuevas, lo que se detallará más adelante en la sección *TODO*.
+## Objetivo 🎯
+Esta es mi página web personal, tiene como finalidad darme una presencia en internet, ser una ventana a mis proyectos e ir aprendiendo durante su desarrollo y operación. Sin duda habrán mejoras que requiere en su estado actual y posibles secciones nuevas.
 
 ## El Reto 🤺
 Las características que debe tener el sitio:
@@ -35,7 +33,7 @@ Las características que debe tener el sitio:
 - Se añadió el Tema **Luminoso**.
 - Se entrega la guía de estilos que contiene los colores, fuentes y dimensiones.
 
-## Programación
+## Programación 💻
 - Se dividió la página en **secciones**, para definir las jerarquías para que la semántica sea la correcta:
 - Se define la estructura de estilos en Sass:
 
