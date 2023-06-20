@@ -4,6 +4,7 @@
 
 interface ImportMetaEnv {
   CONTACT_API:string;
+  CV: string;
 }
 
 interface ImportMeta {
