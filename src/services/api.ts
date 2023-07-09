@@ -18,9 +18,6 @@ export const createPost = async (dataToSend: DataToSend, contact_api: RequestInf
     body: JSON.stringify(dataToSend),
   };
 
-  console.log(requestOptions);
-  
-
   // Fetching al backend
   try {
     const response = await fetch(contact_api, requestOptions);
