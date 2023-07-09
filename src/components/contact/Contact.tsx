@@ -1,5 +1,5 @@
 import styles from './Contact.module.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -10,28 +10,44 @@ import dribbble_logo from '/images/social/dribbble.svg';
 
 import { createPost } from '../../services/api';
 import { toastifyError, toastifySuccess } from '../../services/toastify';
+import { getRandomNumber } from '../../services/humanTest';
+import { AddTest } from './AddTest';
 
 interface FormData {
   name: string;
   email: string;
   subject: string;
   message: string;
+  testResponse: number;
+  test: boolean;
 }
 
 interface Props {
   contact_api: string;
 }
-// ----------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------
 export default function Contact({contact_api}: Props) {
 
-  const{ register, reset, formState, formState: { errors, isSubmitSuccessful }, handleSubmit } = useForm<FormData>();
+  const{ register, watch, reset, formState, formState: { errors, isSubmitSuccessful }, handleSubmit } = useForm<FormData>();
+  const [resultTest, setResultTest] = useState(false);
+  const watchTest = watch('testResponse');
+
+
+  const recibirValor = (valor: boolean) => {
+    setResultTest(valor);
+    console.log('valor recibido del hijo: ', valor);
+    
+  }
+  
+
   
   const onSubmit = async ( data: FormData ) => {
-
+    const dataToSend = {...data, test: resultTest};
+    console.log(dataToSend);
+    
     const id = toast.loading('Enviando Mensaje 📨');
-
     try {
-      const response = await createPost(data, contact_api);
+      const response = await createPost(dataToSend, contact_api);
       if(response.state === 'OK') {
         toastifySuccess(id);
       }
@@ -47,6 +63,7 @@ export default function Contact({contact_api}: Props) {
         email: '',
         subject: '',
         message: '',
+        testResponse: null,
       });
     }
   }, [formState]);
@@ -107,6 +124,18 @@ export default function Contact({contact_api}: Props) {
             {errors.message?.type === 'pattern' && <p>No caracteres especiales</p>}
             {errors.message?.type === 'maxLength' && <p>Máxima 50 palabras</p>}
           </div>
+
+          <div className={styles.form_input}>
+            <label htmlFor="testResponse">Test</label>
+            <AddTest testResponse = {watchTest} enviarValorAlPadre={recibirValor}/>
+            <input type="number" id="testResponse" className={errors.testResponse && styles.inputError}
+            {...register('testResponse', {
+              required: true,
+            })} />
+            {errors.subject?.type === 'required' && <p>El campo es requerido</p>}
+
+          </div>
+
         </div>
 
         <div className={styles.form_actions}>

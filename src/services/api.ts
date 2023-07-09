@@ -1,21 +1,25 @@
 // Este script se encarga de realizar el POST request hacia el backend
-// Se define el tipo <FormData> que osn los campos del email
+// Se define el tipo <DataToSend> que osn los campos del email
 
-interface FormData {
+interface DataToSend {
   name: string;
   email: string;
   subject: string;
   message: string;
+  test: boolean;
 }
 
-export const createPost = async (postData: FormData, contact_api: RequestInfo | URL) => {
+export const createPost = async (dataToSend: DataToSend, contact_api: RequestInfo | URL) => {
 
   // Cabecera del request POST
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(postData),
+    body: JSON.stringify(dataToSend),
   };
+
+  console.log(requestOptions);
+  
 
   // Fetching al backend
   try {
