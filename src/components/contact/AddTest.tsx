@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getRandomNumber, verifyAddNumbers } from "../../services/humanTest";
 
 
-export const AddTest = ({testResponse, enviarValorAlPadre}) => {
+export const AddTest = ({testResponse, onResult}) => {
 
   const [randNumbers, setRandNumbers] = useState({
     firstRandNumber: 0,
@@ -25,7 +25,7 @@ export const AddTest = ({testResponse, enviarValorAlPadre}) => {
   }, [testResponse] );
   
   useEffect( () => {
-    enviarValorAlPadre(result);
+    onResult(result);
   }, [result] )
 
   return (

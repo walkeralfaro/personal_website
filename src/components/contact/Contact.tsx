@@ -32,19 +32,12 @@ export default function Contact({contact_api}: Props) {
   const [resultTest, setResultTest] = useState(false);
   const watchTest = watch('testResponse');
 
-
-  const recibirValor = (valor: boolean) => {
-    setResultTest(valor);
-    console.log('valor recibido del hijo: ', valor);
-    
+  const handleResult = (value: boolean) => {
+    setResultTest(value);
   }
-  
 
-  
   const onSubmit = async ( data: FormData ) => {
     const dataToSend = {...data, test: resultTest};
-    console.log(dataToSend);
-    
     const id = toast.loading('Enviando Mensaje 📨');
     try {
       const response = await createPost(dataToSend, contact_api);
@@ -127,7 +120,7 @@ export default function Contact({contact_api}: Props) {
 
           <div className={styles.form_input}>
             <label htmlFor="testResponse">Test</label>
-            <AddTest testResponse = {watchTest} enviarValorAlPadre={recibirValor}/>
+            <AddTest testResponse = {watchTest} onResult={handleResult}/>
             <input type="number" id="testResponse" className={errors.testResponse && styles.inputError}
             {...register('testResponse', {
               required: true,
