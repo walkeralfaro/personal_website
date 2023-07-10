@@ -98,6 +98,20 @@
     }
   }
 }
+
+.info {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.4rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin: 0 .5rem;
+
+  cursor: pointer;
+  
+}
 // MEDIA QUERIES =============================================================================
 
 @media (min-width: $Tablet) {

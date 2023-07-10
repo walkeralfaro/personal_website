@@ -40,10 +40,18 @@ export default function Contact({contact_api}: Props) {
     const dataToSend = {...data, test: resultTest};
     const id = toast.loading('Enviando Mensaje 📨');
     try {
-      const response = await createPost(dataToSend, contact_api);
-      if(response.state === 'OK') {
-        toastifySuccess(id);
+
+      if(resultTest) {
+
+        const response = await createPost(dataToSend, contact_api);
+        if(response.state === 'OK') {
+          toastifySuccess(id);
+        }
+        
+      } else {
+        throw new Error("error");
       }
+
     } catch (error) {
       toastifyError(id);
     }
@@ -119,7 +127,11 @@ export default function Contact({contact_api}: Props) {
           </div>
 
           <div className={styles.form_input}>
-            <label htmlFor="testResponse">Test</label>
+            <label htmlFor="testResponse" >test 
+              <div className={styles.info} title='ingrese la suma'>
+                <sup>&#8505;</sup>
+              </div>
+            </label>
             <AddTest testResponse = {watchTest} onResult={handleResult}/>
             <input type="number" id="testResponse" className={errors.testResponse && styles.inputError}
             {...register('testResponse', {
