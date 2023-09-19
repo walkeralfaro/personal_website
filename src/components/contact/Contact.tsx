@@ -150,13 +150,13 @@ export default function Contact({contact_api}: Props) {
 
           <div className={styles.social_links}>
             <a href="https://github.com/walkeralfaro" target="_blank">
-              <img src={gitHub_logo} alt="github_link" />
+              <img src='/images/social/github.svg' alt="github_link" />
             </a>
             <a href="https://linkedin.com/in/walkeralfaro/" target="_blank">
-              <img src={linkedIn_logo} alt="linkedin_link" />
+              <img src='/images/social/linkedin.svg' alt="linkedin_link" />
             </a>
             <a href="https://dribbble.com/walkeralfaro" target="_blank">
-              <img src={dribbble_logo} alt="dribbble_link" />
+              <img src='/images/social/dribbble.svg' alt="dribbble_link" />
             </a>
           </div>
         </div>

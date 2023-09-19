@@ -12,8 +12,9 @@
     linear-gradient(to right, $Background-line-Light 1.1px, $Background-Light 1.1px);
   }
 
-  .hero_header {
-    background: $Body-white;
+  .container .hero_header {
+    // background: $Body-white;
+    background: white;
     border-bottom: 4px dashed $Body-blue;
 
     // Botón de cambio de tema ==========================================
