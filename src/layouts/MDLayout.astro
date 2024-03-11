@@ -9,16 +9,17 @@ const { frontmatter } = Astro.props
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-WXSMWWPZNC"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WXSMWWPZNC');
+  </script>
   <BaseHead title={frontmatter.title} description={SITE_DESCRIPTION}/>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXSMWWPZNC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-WXSMWWPZNC');
-</script>
 <body>
   <div class="container">
 
